@@ -8,24 +8,95 @@ import RSVPForm from './components/RSVPForm';
 import MusicWidget from './components/MusicWidget';
 import AdminDashboard from './components/AdminDashboard';
 
-// Divine Light Beam (mimics cathedral lighting)
+// Divine Light Beam (God Rays - Refined for better visibility)
 const DivineLightBeam = ({ className, style }) => (
   <motion.div
     className={`fixed pointer-events-none z-0 ${className}`}
     style={{
       ...style,
-      background: 'linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(184,145,58,0.03) 50%, transparent 100%)',
-      filter: 'blur(40px)',
-      width: '120px',
-      height: '600px',
+      background: 'linear-gradient(to bottom, rgba(255,255,255,0.2) 0%, rgba(184,145,58,0.05) 40%, transparent 100%)',
+      filter: 'blur(35px)',
+      width: '160px',
+      height: '800px',
       transform: 'rotate(-25deg)',
     }}
     animate={{ 
-      opacity: [0.3, 0.6, 0.3],
-      scaleX: [0.9, 1.1, 0.9]
+      opacity: [0.4, 0.75, 0.4],
+      scaleX: [0.85, 1.15, 0.85]
     }}
-    transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+    transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
   />
+);
+
+// Celestial Sparkle (Twinkling starlight)
+const CelestialSparkle = ({ style }) => (
+  <motion.div
+    className="fixed pointer-events-none z-0"
+    style={{
+      ...style,
+      width: '4px',
+      height: '4px',
+      borderRadius: '50%',
+      background: 'white',
+      boxShadow: '0 0 10px white, 0 0 20px rgba(184,145,58,0.4)',
+    }}
+    animate={{
+      scale: [0, 1.2, 0],
+      opacity: [0, 1, 0],
+    }}
+    transition={{
+      duration: 3 + Math.random() * 4,
+      repeat: Infinity,
+      ease: 'easeInOut',
+      delay: Math.random() * 5,
+    }}
+  />
+);
+
+// Holy Dove (Subtle floating silhouette)
+const HolyDove = ({ style }) => (
+  <motion.div
+    className="fixed pointer-events-none z-0 opacity-10"
+    style={style}
+    animate={{
+      x: [-20, 20],
+      y: [-10, 10],
+      opacity: [0.05, 0.15, 0.05],
+    }}
+    transition={{
+      duration: 25,
+      repeat: Infinity,
+      ease: 'easeInOut',
+    }}
+  >
+    <svg viewBox="0 0 100 80" fill="var(--gold)" xmlns="http://www.w3.org/2000/svg" className="w-12 h-10">
+      <path d="M50 40 C60 20 80 10 90 20 C80 30 60 40 50 40 C40 40 20 30 10 20 C20 10 40 20 50 40 Z" fillOpacity="0.4" />
+      <path d="M50 40 C55 50 60 70 50 75 C40 70 45 50 50 40 Z" fillOpacity="0.3" />
+    </svg>
+  </motion.div>
+);
+
+// Sacred Cross (Drifting minimalist motif)
+const SacredCross = ({ style }) => (
+  <motion.div
+    className="fixed pointer-events-none z-0"
+    style={style}
+    animate={{
+      y: [0, -300],
+      opacity: [0, 0.25, 0],
+      rotate: [0, 10, 0],
+    }}
+    transition={{
+      duration: 15 + Math.random() * 10,
+      repeat: Infinity,
+      ease: 'linear',
+      delay: Math.random() * 10,
+    }}
+  >
+    <svg viewBox="0 0 40 60" fill="none" stroke="var(--gold)" strokeWidth="0.8" xmlns="http://www.w3.org/2000/svg" className="w-6 h-8 opacity-40">
+      <path d="M20 5 L20 55 M10 20 L30 20" strokeLinecap="round" />
+    </svg>
+  </motion.div>
 );
 
 // Sacred Dust Motes (ethereal floating particles)
@@ -82,14 +153,9 @@ export default function App() {
   const params = new URLSearchParams(window.location.search);
   const guestName = params.get('guest') || '';
 
-  // Developer Easter Egg Signature
+  // Clean logs
   useEffect(() => {
-    console.log(
-      "%c✨ Premium E-Wedding Card Engine ✨\n\n%cArchitected & Developed by: Jishnu P G\n\uD83D\uDCE7 Email: jishnupg2005@gmail.com\n\uD83D\uDCBB GitHub: https://github.com/JishnuPG-tech\n\n%cPowered by React, Tailwind v4, and Framer Motion.",
-      "color: #B8913A; font-size: 16px; font-weight: bold; font-family: serif;",
-      "color: #5A6D7A; font-size: 12px; font-family: monospace; line-height: 1.6;",
-      "color: #7E868C; font-size: 10px; font-style: italic;"
-    );
+    // Console signature removed at user request
   }, []);
 
   return (
@@ -100,12 +166,37 @@ export default function App() {
       {/* Divine Aura & Sacred Light Beams */}
       <DivineLightBeam style={{ top: '-100px', left: '-50px' }} />
       <DivineLightBeam style={{ top: '-100px', right: '-80px' }} className="scale-x-[-1]" />
-      <div className="fixed inset-0 pointer-events-none z-0 bg-radial-divine opacity-40" />
+      <div className="fixed inset-0 pointer-events-none z-0 bg-radial-divine opacity-50" />
+
+      {/* Holy Dove (Low opacity silhouettes) */}
+      <HolyDove style={{ top: '20%', left: '10%' }} />
+      <HolyDove style={{ top: '65%', right: '15%' }} />
+
+      {/* Sacred Motifs (Crosses & Sparkles) */}
+      {[...Array(6)].map((_, i) => (
+        <SacredCross 
+          key={`cross-${i}`} 
+          style={{ 
+            left: `${15 + Math.random() * 70}%`, 
+            top: `${80 + Math.random() * 20}%` 
+          }} 
+        />
+      ))}
+
+      {[...Array(12)].map((_, i) => (
+        <CelestialSparkle 
+          key={`sparkle-${i}`} 
+          style={{ 
+            left: `${Math.random() * 100}%`, 
+            top: `${Math.random() * 100}%` 
+          }} 
+        />
+      ))}
 
       {/* Sacred Dust Motes */}
-      {[...Array(10)].map((_, i) => (
+      {[...Array(8)].map((_, i) => (
         <SacredDustMote 
-          key={i} 
+          key={`mote-${i}`} 
           style={{ 
             left: `${Math.random() * 100}%`, 
             top: `${70 + Math.random() * 30}%` 

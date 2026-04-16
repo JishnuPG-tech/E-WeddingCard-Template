@@ -1,0 +1,72 @@
+export const weddingData = {
+  couple: {
+    groom: "Gabriel",
+    bride: "Evangeline",
+    ampersand: "&",
+    initials: "G&E"
+  },
+  
+  dates: {
+    // JavaScript parsable ISO format (used for countdown & ICS file)
+    preciseDateIso: "2026-12-20T11:00:00+05:30",
+    
+    // UI strings for the calendar view
+    calendar: {
+      dayOfWeek: "Sunday",
+      dayNumber: "20",
+      month: "Dec",
+      year: "2026",
+    },
+
+    // UI strings for text sections
+    headerDisplay: "Dec 20 · 2026",
+    rsvpDeadlineSummary: "20th", // e.g. "See you on the 15th!"
+    
+    // For ICS Generator specifically
+    icsFormat: {
+      dateStart: "20261220T053000Z",
+      dateEnd:   "20261220T163000Z"
+    }
+  },
+
+  events: {
+    ceremony: {
+      titleEn: "Holy Matrimony",
+      titleMl: "വിശുദ്ധ കുർബാന",
+      timeText: "11:00 AM to 12:30 PM"
+    },
+    reception: {
+      titleEn: "Wedding Banquet",
+      titleMl: "സ്നേഹ വിരുന്ന്",
+      timeText: "1:00 PM onwards"
+    }
+  },
+
+  venue: {
+    name: "St. Mary's Cathedral",
+    addressEn: [
+      "Basilica Road, Marine Drive",
+      "Kochi, Kerala — 682 031"
+    ],
+    // Used in ICS and sharing
+    singleLineAddress: "St. Mary's Cathedral, Kochi, Kerala",
+    links: {
+      googleMapsEmbed: "https://maps.google.com/maps?q=St+Marys+Cathedral+Kochi&output=embed&zoom=15",
+      googleMapsDirect: "https://maps.google.com/?q=St+Marys+Cathedral+Kochi",
+    }
+  },
+
+  hosts: [
+    "Mr. & Mrs. Joseph Kurian",
+    "Mr. & Mrs. Thomas Varghese"
+  ],
+
+  strings: {
+    bibleVerse: "So they are no longer two, but one flesh. Therefore what God has joined together, let no one separate.",
+    bibleReference: "Matthew 19:6",
+    inviteSecondaryEn: "With the blessing of God and our families, we joyfully invite you to witness the union of our hearts.",
+    invitePrimaryMl: "വിവാഹ മംഗളാശംസകൾ",
+    envelopeSmallTitle: "GOD IS LOVE",
+    whatsappShareText: "You are affectionately invited to the Holy Matrimony of Gabriel & Evangeline! 📍 St. Mary's Cathedral, Kochi 📅 20th Dec 2026"
+  }
+};

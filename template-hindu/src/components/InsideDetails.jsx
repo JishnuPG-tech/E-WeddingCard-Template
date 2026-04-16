@@ -28,7 +28,7 @@ const DetailRow = ({ label, value, delay = 0 }) => {
       transition={{ duration: 0.65, ease: 'easeOut', delay }}
       className="text-center py-4"
     >
-      <p className="font-inter text-[10px] uppercase tracking-[0.3em] text-[#B8913A] mb-1">{label}</p>
+      <div className="font-inter text-[10px] uppercase tracking-[0.3em] text-[#B8913A] mb-1">{label}</div>
       <p className="font-cormorant text-2xl font-medium text-[#2C2C2C] leading-tight">{value}</p>
     </motion.div>
   );

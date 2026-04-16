@@ -33,14 +33,9 @@ export default function App() {
   const params = new URLSearchParams(window.location.search);
   const guestName = params.get('guest') || '';
 
-  // Developer Easter Egg Signature
+  // Clean logs
   useEffect(() => {
-    console.log(
-      "%c✨ Premium E-Wedding Card Engine ✨\n\n%cArchitected & Developed by: Jishnu P G\n\uD83D\uDCE7 Email: jishnupg2005@gmail.com\n\uD83D\uDCBB GitHub: https://github.com/JishnuPG-tech\n\n%cPowered by React, Tailwind v4, and Framer Motion.",
-      "color: #D4AF37; font-size: 16px; font-weight: bold; font-family: serif;",
-      "color: #4A634A; font-size: 12px; font-family: monospace; line-height: 1.6;",
-      "color: #718096; font-size: 10px; font-style: italic;"
-    );
+    // Console signature removed at user request
   }, []);
 
   return (

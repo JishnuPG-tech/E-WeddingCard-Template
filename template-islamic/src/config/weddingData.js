@@ -48,7 +48,6 @@ export const weddingData = {
       "124 Gateway Avenue, Kochi",
       "Kerala — 682 011"
     ],
-    // Used in ICS and sharing
     singleLineAddress: "Al-Hambra Convention Center, Kochi, Kerala",
     links: {
       googleMapsEmbed: "https://maps.google.com/maps?q=Kochi,Kerala&output=embed&zoom=13",
@@ -56,10 +55,39 @@ export const weddingData = {
     }
   },
 
+  reception: {
+    name: "Walima — Grand Ballroom, Hotel Taj",
+    timeText: "7:30 PM onwards",
+    addressEn: [
+      "MG Road, Ernakulam",
+      "Kochi, Kerala — 682 035"
+    ],
+    singleLineAddress: "Grand Ballroom, Hotel Taj, Kochi, Kerala",
+    links: {
+      googleMapsEmbed: "https://maps.google.com/maps?q=Hotel+Taj+Kochi&output=embed&zoom=14",
+      googleMapsDirect: "https://maps.google.com/?q=Hotel+Taj+Kochi",
+    }
+  },
+
   hosts: [
     "Mr. & Mrs. Abdul Rahman",
     "Mr. & Mrs. Salim Khan"
   ],
+
+  family: {
+    groom: {
+      name: "Fahad Abdul Rahman",
+      father: "Mr. Abdul Rahman",
+      mother: "Mrs. Fathima Rahman",
+      relation: "Son of"
+    },
+    bride: {
+      name: "Ayesha Salim",
+      father: "Mr. Salim Khan",
+      mother: "Mrs. Zubaidha Salim",
+      relation: "Daughter of"
+    }
+  },
 
   strings: {
     bismillahArabic: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",

@@ -4,6 +4,8 @@ import HeroCover from './components/HeroCover';
 import InsideDetails from './components/InsideDetails';
 import Gallery from './components/Gallery';
 import VenueSection from './components/VenueSection';
+import ReceptionSection from './components/ReceptionSection';
+import FamilySection from './components/FamilySection';
 import RSVPForm from './components/RSVPForm';
 import MusicWidget from './components/MusicWidget';
 import AdminDashboard from './components/AdminDashboard';
@@ -68,6 +70,8 @@ export default function App() {
         <InsideDetails />
         <Gallery />
         <VenueSection />
+        <ReceptionSection />
+        <FamilySection />
         <RSVPForm />
       </div>
 

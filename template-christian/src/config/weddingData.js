@@ -48,7 +48,6 @@ export const weddingData = {
       "Basilica Road, Marine Drive",
       "Kochi, Kerala — 682 031"
     ],
-    // Used in ICS and sharing
     singleLineAddress: "St. Mary's Cathedral, Kochi, Kerala",
     links: {
       googleMapsEmbed: "https://maps.google.com/maps?q=St+Marys+Cathedral+Kochi&output=embed&zoom=15",
@@ -56,10 +55,39 @@ export const weddingData = {
     }
   },
 
+  reception: {
+    name: "Le Meridien Convention Hall",
+    timeText: "7:00 PM onwards",
+    addressEn: [
+      "Maradu, NH 66 Bypass",
+      "Kochi, Kerala — 682 304"
+    ],
+    singleLineAddress: "Le Meridien Convention Hall, Kochi, Kerala",
+    links: {
+      googleMapsEmbed: "https://maps.google.com/maps?q=Le+Meridien+Kochi&output=embed&zoom=14",
+      googleMapsDirect: "https://maps.google.com/?q=Le+Meridien+Kochi",
+    }
+  },
+
   hosts: [
     "Mr. & Mrs. Joseph Kurian",
     "Mr. & Mrs. Thomas Varghese"
   ],
+
+  family: {
+    groom: {
+      name: "Gabriel Joseph",
+      father: "Mr. Joseph Kurian",
+      mother: "Mrs. Mary Joseph",
+      relation: "Son of"
+    },
+    bride: {
+      name: "Evangeline Thomas",
+      father: "Mr. Thomas Varghese",
+      mother: "Mrs. Annie Thomas",
+      relation: "Daughter of"
+    }
+  },
 
   strings: {
     bibleVerse: "So they are no longer two, but one flesh. Therefore what God has joined together, let no one separate.",

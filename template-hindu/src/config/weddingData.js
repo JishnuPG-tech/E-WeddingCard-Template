@@ -48,7 +48,6 @@ export const weddingData = {
       "12/45 Temple Road, Thrissur",
       "Kerala — 680 001"
     ],
-    // Used in ICS and sharing
     singleLineAddress: "Kalyana Mandapam, Thrissur, Kerala",
     links: {
       googleMapsEmbed: "https://maps.google.com/maps?q=Thrissur,Kerala&output=embed&zoom=13",
@@ -56,10 +55,39 @@ export const weddingData = {
     }
   },
 
+  reception: {
+    name: "Royal Gardens Banquet Hall",
+    timeText: "6:00 PM onwards",
+    addressEn: [
+      "Palace Road, Near Sakthan Bus Stand",
+      "Thrissur, Kerala — 680 001"
+    ],
+    singleLineAddress: "Royal Gardens Banquet Hall, Thrissur, Kerala",
+    links: {
+      googleMapsEmbed: "https://maps.google.com/maps?q=Thrissur,Kerala&output=embed&zoom=14",
+      googleMapsDirect: "https://maps.google.com/?q=Royal+Gardens+Banquet+Hall+Thrissur",
+    }
+  },
+
   hosts: [
     "Mr. & Mrs. Krishnan Nair",
     "Mr. & Mrs. Suresh Menon"
   ],
+
+  family: {
+    groom: {
+      name: "Anand Krishnan",
+      father: "Mr. Krishnan Nair",
+      mother: "Mrs. Santha Krishnan",
+      relation: "Son of"
+    },
+    bride: {
+      name: "Meera Suresh",
+      father: "Mr. Suresh Menon",
+      mother: "Mrs. Leela Suresh",
+      relation: "Daughter of"
+    }
+  },
 
   strings: {
     inviteSecondaryEn: "Together with their families, we joyfully invite you to celebrate the marriage of",

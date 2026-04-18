@@ -6,7 +6,7 @@ import { weddingData } from '../config/weddingData';
 const LanternSvg = ({ className }) => (
   <svg viewBox="0 0 80 120" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
     <path d="M40 10 L45 25 L35 25 Z" fill="var(--gold)" fillOpacity="0.15" />
-    <rect x="30" y="25" width="20" height="40" rx="3" fill="var(--gold)" fillOpacity="0.08" stroke="var(--gold)" strokeWidth="0.8" strokeOpacity="0.3"/>
+    <rect x="30" y="25" width="20" height="40" rx="3" fill="var(--gold)" fillOpacity="0.08" stroke="var(--gold)" strokeWidth="0.8" strokeOpacity="0.3" />
     <path d="M25 65 L55 65 L50 80 L30 80 Z" fill="var(--gold)" fillOpacity="0.15" />
     <path d="M40 0 L40 10" stroke="var(--gold)" strokeWidth="1" strokeOpacity="0.4" />
   </svg>
@@ -68,16 +68,16 @@ export default function HeroCover({ guestName }) {
           {/* Guest personalization badge */}
           {guestName ? (
             <motion.div variants={itemVariants} className="flex justify-center mb-5">
-              <motion.div 
+              <motion.div
                 animate={{ boxShadow: ['0px 0px 0px rgba(184,145,58,0)', '0px 4px 24px rgba(184,145,58,0.25)', '0px 0px 0px rgba(184,145,58,0)'] }}
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                 className="inline-block relative rounded-full px-7 py-3 bg-gradient-to-br from-[var(--ivory)] to-[#F2EBE0] border border-[var(--gold)]/30 overflow-hidden shadow-sm"
               >
                 {/* Premium Glass Light Sweep */}
-                <motion.div 
-                   animate={{ x: ['-200%', '250%'] }}
-                   transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', repeatDelay: 1.5 }}
-                   className="absolute top-0 bottom-0 w-1/3 bg-gradient-to-r from-transparent via-white/80 to-transparent -skew-x-12 z-0"
+                <motion.div
+                  animate={{ x: ['-200%', '250%'] }}
+                  transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', repeatDelay: 1.5 }}
+                  className="absolute top-0 bottom-0 w-1/3 bg-gradient-to-r from-transparent via-white/80 to-transparent -skew-x-12 z-0"
                 />
                 <p className="relative z-10 font-inter text-[9px] uppercase tracking-[0.25em] text-[var(--text-muted)] leading-relaxed">
                   Exclusively Invited
@@ -140,7 +140,7 @@ export default function HeroCover({ guestName }) {
           <p className="font-inter text-[10px] uppercase tracking-[0.3em] text-[var(--text-muted)] opacity-70">Swipe up to open</p>
           <div className="scroll-indicator text-[var(--sage)] opacity-50">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-              <path d="M12 5v14M5 12l7 7 7-7"/>
+              <path d="M12 5v14M5 12l7 7 7-7" />
             </svg>
           </div>
         </motion.div>

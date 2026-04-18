@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { motion as Motion, AnimatePresence, useInView } from 'framer-motion';
 import { Check, X } from 'lucide-react';
 import Confetti from 'react-confetti';
 import { supabase } from '../config/supabase';
@@ -16,6 +16,7 @@ async function submitRSVP({ name, attending, peopleCount }) {
     ]);
     if (error) throw error;
   } else {
+    // Demo mode delay
     await new Promise((res) => setTimeout(res, 800));
   }
 }
@@ -72,7 +73,7 @@ export default function RSVPForm() {
         setShowConfetti(true);
         setTimeout(() => setShowConfetti(false), 6000);
       }
-    } catch (err) {
+    } catch {
       setError('Something went wrong. Please try again.');
     } finally {
       setLoading(false);
@@ -82,10 +83,6 @@ export default function RSVPForm() {
   const successTitle = attending
     ? "We can't wait to see you!"
     : "We'll miss you!";
-
-  const successMessage = attending
-    ? `Thank you, ${name}! Your attendance is confirmed. See you on the ${weddingData.dates.rsvpDeadlineSummary}! \u{1F389}`
-    : `Thank you, ${name}. We understand and appreciate you letting us know. \u{1F49B}`;
 
   return (
     <section className="scroll-section flex items-center justify-center bg-[#F5F4F0] px-6 py-8 relative overflow-hidden">
@@ -103,7 +100,7 @@ export default function RSVPForm() {
       )}
 
       <div className="w-full max-w-sm mx-auto">
-        <motion.div
+        <Motion.div
           ref={ref}
           initial={{ opacity: 0, y: 18 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -117,9 +114,9 @@ export default function RSVPForm() {
           <p className="font-cormorant italic text-base text-[#7A7060] mt-1">
             We would love to know you will be there
           </p>
-        </motion.div>
+        </Motion.div>
 
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.15, duration: 0.7 }}
@@ -132,7 +129,7 @@ export default function RSVPForm() {
 
           <AnimatePresence mode="wait">
             {submitted ? (
-              <motion.div
+              <Motion.div
                 key="success"
                 initial={{ opacity: 0, scale: 0.92 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -156,9 +153,9 @@ export default function RSVPForm() {
                     With love, {weddingData.couple.groom} {weddingData.couple.ampersand} {weddingData.couple.bride}
                   </p>
                 </div>
-              </motion.div>
+              </Motion.div>
             ) : (
-              <motion.form
+              <Motion.form
                 key="form"
                 onSubmit={handleSubmit}
                 initial={{ opacity: 1 }}
@@ -232,7 +229,7 @@ export default function RSVPForm() {
 
                 <AnimatePresence>
                   {attending === true && (
-                    <motion.div
+                    <Motion.div
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
@@ -261,7 +258,7 @@ export default function RSVPForm() {
                           +
                         </button>
                       </div>
-                    </motion.div>
+                    </Motion.div>
                   )}
                 </AnimatePresence>
 
@@ -283,12 +280,12 @@ export default function RSVPForm() {
                     Demo mode — connect Supabase via .env to save responses
                   </p>
                 )}
-              </motion.form>
+              </Motion.form>
             )}
           </AnimatePresence>
-        </motion.div>
+        </Motion.div>
 
-        <motion.div
+        <Motion.div
            initial={{ opacity: 0 }}
            animate={inView ? { opacity: 1 } : {}}
            transition={{ delay: 0.5, duration: 0.6 }}
@@ -314,7 +311,7 @@ export default function RSVPForm() {
               jishnupg2005@gmail.com
             </p>
           </a>
-        </motion.div>
+        </Motion.div>
       </div>
     </section>
   );

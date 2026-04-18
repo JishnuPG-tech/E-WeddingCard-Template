@@ -68,5 +68,14 @@ export const weddingData = {
     invitePrimaryMl: "വിവാഹ മംഗളാശംസകൾ",
     envelopeSmallTitle: "GOD IS LOVE",
     whatsappShareText: "You are affectionately invited to the Holy Matrimony of Gabriel & Evangeline! 📍 St. Mary's Cathedral, Kochi 📅 20th Dec 2026"
-  }
+  },
+
+  gallery: [
+    { src: '/gallery/photo1.jpg', alt: 'Church steps', span: 'tall' },
+    { src: '/gallery/photo2.jpg', alt: 'Garden walk', span: 'wide' },
+    { src: '/gallery/photo3.jpg', alt: 'Laughing together', span: 'tall' },
+    { src: '/gallery/photo4.jpg', alt: 'Sunset beach', span: 'wide' },
+    { src: '/gallery/photo5.jpg', alt: 'Flower courtyard', span: 'square' },
+    { src: '/gallery/photo6.jpg', alt: 'Church interior', span: 'tall' },
+  ]
 };

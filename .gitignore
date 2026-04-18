@@ -35,3 +35,8 @@ dist-ssr/
 
 # Project specific
 public/mockServiceWorker.js
+
+# Demo gallery photos (replace with real photos)
+template-christian/public/gallery/
+template-hindu/public/gallery/
+template-islamic/public/gallery/

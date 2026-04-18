@@ -67,5 +67,14 @@ export const weddingData = {
     invitePrimaryMl: "വിവാഹ ക്ഷണം",
     envelopeSmallTitle: "BISMILLAH",
     whatsappShareText: "You are affectionately invited to the Nikah of Fahad & Ayesha! 📍 Al-Hambra Convention Center, Kochi 📅 15th Nov 2026"
-  }
+  },
+
+  gallery: [
+    { src: '/gallery/photo1.jpg', alt: 'Together', span: 'tall' },
+    { src: '/gallery/photo2.jpg', alt: 'Garden walk', span: 'wide' },
+    { src: '/gallery/photo3.jpg', alt: 'Laughing', span: 'tall' },
+    { src: '/gallery/photo4.jpg', alt: 'Sunset', span: 'wide' },
+    { src: '/gallery/photo5.jpg', alt: 'Flowers', span: 'square' },
+    { src: '/gallery/photo6.jpg', alt: 'Venue', span: 'tall' },
+  ]
 };

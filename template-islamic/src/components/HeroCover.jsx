@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
+import { motion as Motion } from 'framer-motion';
 import { weddingData } from '../config/weddingData';
 
 // Floating decorative lantern SVG
@@ -69,18 +69,19 @@ export default function HeroCover({ guestName }) {
           {guestName ? (
             <motion.div variants={itemVariants} className="flex justify-center mb-5">
               <motion.div 
-                animate={{ boxShadow: ['0px 0px 0px rgba(212,175,55,0)', '0px 4px 20px rgba(212,175,55,0.15)', '0px 0px 0px rgba(212,175,55,0)'] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                className="inline-block relative rounded-full px-8 py-3 bg-[var(--cream)]/60 backdrop-blur-md border border-[var(--gold)]/20 overflow-hidden shadow-sm"
+                animate={{ boxShadow: ['0px 0px 0px rgba(184,145,58,0)', '0px 4px 24px rgba(184,145,58,0.25)', '0px 0px 0px rgba(184,145,58,0)'] }}
+                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                className="inline-block relative rounded-full px-7 py-3 bg-gradient-to-br from-[var(--ivory)] to-[#F2EBE0] border border-[var(--gold)]/30 overflow-hidden shadow-sm"
               >
+                {/* Premium Glass Light Sweep */}
                 <motion.div 
                    animate={{ x: ['-200%', '250%'] }}
-                   transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', repeatDelay: 2 }}
-                   className="absolute top-0 bottom-0 w-1/3 bg-gradient-to-r from-transparent via-[var(--cream)]/80 to-transparent -skew-x-12 z-0"
+                   transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', repeatDelay: 1.5 }}
+                   className="absolute top-0 bottom-0 w-1/3 bg-gradient-to-r from-transparent via-white/80 to-transparent -skew-x-12 z-0"
                 />
-                <p className="relative z-10 font-inter text-[9.5px] uppercase tracking-[0.3em] text-[var(--text-muted)] leading-relaxed">
-                  Especially for
-                  <span className="font-semibold text-[var(--gold)] tracking-[0.25em] text-[11px] mt-1 block">{guestName}</span>
+                <p className="relative z-10 font-inter text-[9px] uppercase tracking-[0.25em] text-[var(--text-muted)] leading-relaxed">
+                  Exclusively Invited
+                  <span className="font-semibold text-[var(--gold)] tracking-[0.2em] text-[11px] mt-0.5 block drop-shadow-sm">{guestName}</span>
                 </p>
               </motion.div>
             </motion.div>

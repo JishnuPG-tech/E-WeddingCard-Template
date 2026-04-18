@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Envelope from './components/Envelope';
 import HeroCover from './components/HeroCover';
 import InsideDetails from './components/InsideDetails';
+import Gallery from './components/Gallery';
 import VenueSection from './components/VenueSection';
 import RSVPForm from './components/RSVPForm';
 import MusicWidget from './components/MusicWidget';
@@ -22,11 +23,6 @@ function FloatingLantern({ style, className }) {
 }
 
 export default function App() {
-  // Simple manual routing for the admin dashboard
-  if (window.location.pathname === '/admin') {
-    return <AdminDashboard />;
-  }
-
   const [loaderDone, setLoaderDone] = useState(false);
 
   // Parse ?guest=Name from URL
@@ -37,6 +33,11 @@ export default function App() {
   useEffect(() => {
     // Console signature removed at user request
   }, []);
+
+  // Simple manual routing for the admin dashboard
+  if (window.location.pathname === '/admin') {
+    return <AdminDashboard />;
+  }
 
   return (
     <div className="relative w-full bg-[var(--ivory)]">
@@ -64,7 +65,8 @@ export default function App() {
       {/* Scroll snap container with all sections */}
       <div className="scroll-container">
         <HeroCover guestName={guestName} />
-        <InsideDetails guestName={guestName} />
+        <InsideDetails />
+        <Gallery />
         <VenueSection />
         <RSVPForm />
       </div>

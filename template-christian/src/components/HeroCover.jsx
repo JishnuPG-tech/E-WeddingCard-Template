@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
+import { motion as Motion } from 'framer-motion';
 import { weddingData } from '../config/weddingData';
 
 // Floating decorative petal SVG
@@ -53,7 +53,7 @@ export default function HeroCover({ guestName }) {
 
       {/* Main card */}
       <div className="w-full max-w-sm mx-auto px-6 py-12 text-center z-10 relative">
-        <motion.div
+        <Motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -65,37 +65,38 @@ export default function HeroCover({ guestName }) {
           <div className="absolute bottom-4 left-4 w-10 h-10 border-b border-l border-[var(--gold)] border-opacity-20 rounded-bl-lg" />
           <div className="absolute bottom-4 right-4 w-10 h-10 border-b border-r border-[var(--gold)] border-opacity-20 rounded-br-lg" />
 
-          {/* Guest personalization badge */}
+          {/* Small invitation label / Guest personalization badge */}
           {guestName ? (
-            <motion.div variants={itemVariants} className="flex justify-center mb-5">
-              <motion.div 
-                animate={{ boxShadow: ['0px 0px 0px rgba(184,145,58,0)', '0px 4px 20px rgba(184,145,58,0.15)', '0px 0px 0px rgba(184,145,58,0)'] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                className="inline-block relative rounded-full px-8 py-3 bg-white/60 backdrop-blur-md border border-[var(--gold)]/20 overflow-hidden shadow-sm"
+            <Motion.div variants={itemVariants} className="flex justify-center mb-5">
+              <Motion.div 
+                animate={{ boxShadow: ['0px 0px 0px rgba(184,145,58,0)', '0px 4px 24px rgba(184,145,58,0.25)', '0px 0px 0px rgba(184,145,58,0)'] }}
+                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                className="inline-block relative rounded-full px-7 py-3 bg-gradient-to-br from-[var(--pearl)] to-[#F2EBE0] border border-[var(--gold-pale)] overflow-hidden shadow-sm"
               >
-                <motion.div 
+                {/* Premium Glass Light Sweep */}
+                <Motion.div 
                    animate={{ x: ['-200%', '250%'] }}
-                   transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', repeatDelay: 2 }}
+                   transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', repeatDelay: 1.5 }}
                    className="absolute top-0 bottom-0 w-1/3 bg-gradient-to-r from-transparent via-white/80 to-transparent -skew-x-12 z-0"
                 />
-                <p className="relative z-10 font-inter text-[9.5px] uppercase tracking-[0.3em] text-[var(--text-muted)] leading-relaxed">
-                  Especially for
-                  <span className="font-semibold text-[var(--gold)] tracking-[0.25em] text-[11px] mt-1 block">{guestName}</span>
+                <p className="relative z-10 font-inter text-[9px] uppercase tracking-[0.25em] text-[var(--text-muted)] leading-relaxed">
+                  Especially Invited
+                  <span className="font-semibold text-[var(--gold)] tracking-[0.2em] text-[11px] mt-0.5 block drop-shadow-sm">{guestName}</span>
                 </p>
-              </motion.div>
-            </motion.div>
+              </Motion.div>
+            </Motion.div>
           ) : (
-            <motion.div variants={itemVariants} className="flex justify-center mb-5">
-              <div className="inline-block border border-[var(--gold)]/20 shadow-sm rounded-full px-6 py-2 bg-white/40 backdrop-blur-sm">
+            <Motion.div variants={itemVariants} className="flex justify-center mb-5">
+              <div className="inline-block border border-[var(--gold)]/20 shadow-sm rounded-full px-6 py-2 bg-[var(--cream)]/40 backdrop-blur-sm">
                 <p className="font-inter text-[10px] uppercase tracking-[0.35em] text-[var(--gold)] font-medium">
                   Wedding Invitation
                 </p>
               </div>
-            </motion.div>
+            </Motion.div>
           )}
 
           {/* Bible Verse Header (Matching Hindu Parity) */}
-          <motion.div variants={itemVariants} className="mb-5 mt-0 px-2">
+          <Motion.div variants={itemVariants} className="mb-5 mt-0 px-2">
             <p className="font-playfair text-[14px] italic text-[var(--text-dark)] leading-relaxed mb-1.5 opacity-90">
               "{weddingData.strings.bibleVerse}"
             </p>
@@ -105,35 +106,35 @@ export default function HeroCover({ guestName }) {
             <p className="font-cormorant text-[14.5px] italic text-[var(--text-muted)] leading-relaxed opacity-95 max-w-[250px] mx-auto">
               {weddingData.strings.inviteSecondaryEn}
             </p>
-          </motion.div>
+          </Motion.div>
 
           {/* Couple names (Fluid sizing for long-name 'Evangeline' compatibility) */}
-          <motion.h1 variants={itemVariants} className="font-playfair font-bold text-[clamp(1.8rem,8vw,2.4rem)] leading-tight mb-2 gold-shimmer drop-shadow-sm">
+          <Motion.h1 variants={itemVariants} className="font-playfair font-bold text-[clamp(1.8rem,8vw,2.4rem)] leading-tight mb-2 gold-shimmer drop-shadow-sm">
             {weddingData.couple.groom}
-          </motion.h1>
-          <motion.p variants={itemVariants} className="font-cormorant italic text-lg text-[var(--dusty-blue)] mb-2">{weddingData.couple.ampersand}</motion.p>
-          <motion.h1 variants={itemVariants} className="font-playfair font-bold text-[clamp(1.8rem,8vw,2.4rem)] leading-tight mb-6 gold-shimmer drop-shadow-sm">
+          </Motion.h1>
+          <Motion.p variants={itemVariants} className="font-cormorant italic text-lg text-[var(--dusty-blue)] mb-2">{weddingData.couple.ampersand}</Motion.p>
+          <Motion.h1 variants={itemVariants} className="font-playfair font-bold text-[clamp(1.8rem,8vw,2.4rem)] leading-tight mb-6 gold-shimmer drop-shadow-sm">
             {weddingData.couple.bride}
-          </motion.h1>
+          </Motion.h1>
 
           {/* Cross icon parity with Lotus */}
-          <motion.div variants={itemVariants} className="mb-4">
+          <Motion.div variants={itemVariants} className="mb-4">
             <CrossMini />
-          </motion.div>
+          </Motion.div>
 
           {/* Date teaser */}
-          <motion.div variants={itemVariants}>
+          <Motion.div variants={itemVariants}>
             <div className="ornamental-divider text-[var(--gold)] text-xs mb-4">
               <span className="opacity-30">✧</span>
             </div>
             <p className="font-inter text-[12px] uppercase tracking-[0.3em] text-[var(--text-dark)] opacity-70 font-medium">
               {weddingData.dates.headerDisplay}
             </p>
-          </motion.div>
-        </motion.div>
+          </Motion.div>
+        </Motion.div>
 
         {/* Scroll indicator */}
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
@@ -145,7 +146,7 @@ export default function HeroCover({ guestName }) {
               <path d="M12 5v14M5 12l7 7 7-7"/>
             </svg>
           </div>
-        </motion.div>
+        </Motion.div>
       </div>
     </section>
   );

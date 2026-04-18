@@ -66,5 +66,14 @@ export const weddingData = {
     invitePrimaryMl: "വിവാഹ ക്ഷണം",
     envelopeSmallTitle: "വിവാഹ ക്ഷണം",
     whatsappShareText: "You're invited to the wedding of Anand & Meera! 📍 Kalyana Mandapam, Thrissur 📅 20th May 2026"
-  }
+  },
+
+  gallery: [
+    { src: '/gallery/photo1.jpg', alt: 'Together', span: 'tall' },
+    { src: '/gallery/photo2.jpg', alt: 'Garden walk', span: 'wide' },
+    { src: '/gallery/photo3.jpg', alt: 'Laughing', span: 'tall' },
+    { src: '/gallery/photo4.jpg', alt: 'Sunset', span: 'wide' },
+    { src: '/gallery/photo5.jpg', alt: 'Flowers', span: 'square' },
+    { src: '/gallery/photo6.jpg', alt: 'Temple', span: 'tall' },
+  ]
 };

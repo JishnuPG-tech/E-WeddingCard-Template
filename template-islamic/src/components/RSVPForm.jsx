@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { motion as Motion, AnimatePresence, useInView } from 'framer-motion';
 import { Check, X } from 'lucide-react';
 import Confetti from 'react-confetti';
 import { supabase } from '../config/supabase';
@@ -60,7 +60,7 @@ export default function RSVPForm() {
         setShowConfetti(true);
         setTimeout(() => setShowConfetti(false), 6000);
       }
-    } catch (err) {
+    } catch {
       setError('Something went wrong. Please try again.');
     } finally {
       setLoading(false);
@@ -87,7 +87,7 @@ export default function RSVPForm() {
       )}
 
       <div className="w-full max-w-sm mx-auto">
-        <motion.div
+        <Motion.div
           ref={ref}
           initial={{ opacity: 0, y: 18 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -101,9 +101,9 @@ export default function RSVPForm() {
           <p className="font-cormorant italic text-base text-[var(--text-muted)] mt-2">
             Please respond by the {weddingData.dates.rsvpDeadlineSummary}
           </p>
-        </motion.div>
+        </Motion.div>
 
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.15, duration: 0.7 }}
@@ -116,7 +116,7 @@ export default function RSVPForm() {
 
           <AnimatePresence mode="wait">
             {submitted ? (
-              <motion.div
+              <Motion.div
                 key="success"
                 initial={{ opacity: 0, scale: 0.92 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -137,9 +137,9 @@ export default function RSVPForm() {
                     With Peace, {weddingData.couple.groom} {weddingData.couple.ampersand} {weddingData.couple.bride}
                   </p>
                 </div>
-              </motion.div>
+              </Motion.div>
             ) : (
-              <motion.form
+              <Motion.form
                 key="form"
                 onSubmit={handleSubmit}
                 initial={{ opacity: 1 }}
@@ -210,7 +210,7 @@ export default function RSVPForm() {
 
                 <AnimatePresence>
                   {attending === true && (
-                    <motion.div
+                    <Motion.div
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
@@ -239,7 +239,7 @@ export default function RSVPForm() {
                           +
                         </button>
                       </div>
-                    </motion.div>
+                    </Motion.div>
                   )}
                 </AnimatePresence>
 
@@ -255,13 +255,13 @@ export default function RSVPForm() {
                 >
                   {loading ? 'Sending...' : 'Confirm RSVP'}
                 </button>
-              </motion.form>
+              </Motion.form>
             )}
           </AnimatePresence>
-        </motion.div>
+        </Motion.div>
 
         {/* Footer (Hindu Parity) */}
-        <motion.div
+        <Motion.div
            initial={{ opacity: 0 }}
            animate={inView ? { opacity: 1 } : {}}
            transition={{ delay: 0.5, duration: 0.6 }}
@@ -280,7 +280,7 @@ export default function RSVPForm() {
               Crafted by <span className="font-semibold text-[var(--gold)] tracking-[0.1em] group-hover:text-[#9A7A30] transition-colors">Jishnu P G</span>
             </p>
           </a>
-        </motion.div>
+        </Motion.div>
       </div>
     </section>
   );

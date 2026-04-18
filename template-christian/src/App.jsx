@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState, useMemo } from 'react';
+import { motion as Motion } from 'framer-motion';
 import Envelope from './components/Envelope';
 import HeroCover from './components/HeroCover';
 import InsideDetails from './components/InsideDetails';
+import Gallery from './components/Gallery';
 import VenueSection from './components/VenueSection';
 import RSVPForm from './components/RSVPForm';
 import MusicWidget from './components/MusicWidget';
@@ -10,7 +11,7 @@ import AdminDashboard from './components/AdminDashboard';
 
 // Divine Light Beam (God Rays - Refined for better visibility)
 const DivineLightBeam = ({ className, style }) => (
-  <motion.div
+  <Motion.div
     className={`fixed pointer-events-none z-0 ${className}`}
     style={{
       ...style,
@@ -29,8 +30,8 @@ const DivineLightBeam = ({ className, style }) => (
 );
 
 // Celestial Sparkle (Twinkling starlight)
-const CelestialSparkle = ({ style }) => (
-  <motion.div
+const CelestialSparkle = ({ style, duration, delay }) => (
+  <Motion.div
     className="fixed pointer-events-none z-0"
     style={{
       ...style,
@@ -45,17 +46,17 @@ const CelestialSparkle = ({ style }) => (
       opacity: [0, 1, 0],
     }}
     transition={{
-      duration: 3 + Math.random() * 4,
+      duration,
       repeat: Infinity,
       ease: 'easeInOut',
-      delay: Math.random() * 5,
+      delay,
     }}
   />
 );
 
 // Holy Dove (Subtle floating silhouette)
 const HolyDove = ({ style }) => (
-  <motion.div
+  <Motion.div
     className="fixed pointer-events-none z-0 opacity-10"
     style={style}
     animate={{
@@ -73,12 +74,12 @@ const HolyDove = ({ style }) => (
       <path d="M50 40 C60 20 80 10 90 20 C80 30 60 40 50 40 C40 40 20 30 10 20 C20 10 40 20 50 40 Z" fillOpacity="0.4" />
       <path d="M50 40 C55 50 60 70 50 75 C40 70 45 50 50 40 Z" fillOpacity="0.3" />
     </svg>
-  </motion.div>
+  </Motion.div>
 );
 
 // Sacred Cross (Drifting minimalist motif)
-const SacredCross = ({ style }) => (
-  <motion.div
+const SacredCross = ({ style, duration, delay }) => (
+  <Motion.div
     className="fixed pointer-events-none z-0"
     style={style}
     animate={{
@@ -87,21 +88,21 @@ const SacredCross = ({ style }) => (
       rotate: [0, 10, 0],
     }}
     transition={{
-      duration: 15 + Math.random() * 10,
+      duration,
       repeat: Infinity,
       ease: 'linear',
-      delay: Math.random() * 10,
+      delay,
     }}
   >
     <svg viewBox="0 0 40 60" fill="none" stroke="var(--gold)" strokeWidth="0.8" xmlns="http://www.w3.org/2000/svg" className="w-6 h-8 opacity-40">
       <path d="M20 5 L20 55 M10 20 L30 20" strokeLinecap="round" />
     </svg>
-  </motion.div>
+  </Motion.div>
 );
 
 // Sacred Dust Motes (ethereal floating particles)
-const SacredDustMote = ({ style }) => (
-  <motion.div
+const SacredDustMote = ({ style, duration, delay }) => (
+  <Motion.div
     className="fixed pointer-events-none z-0 brightness-150"
     style={{
       ...style,
@@ -117,10 +118,10 @@ const SacredDustMote = ({ style }) => (
       opacity: [0, 0.8, 0],
     }}
     transition={{
-      duration: 12 + Math.random() * 8,
+      duration,
       repeat: Infinity,
       ease: 'linear',
-      delay: Math.random() * 10,
+      delay,
     }}
   />
 );
@@ -142,11 +143,6 @@ function OliveLeaf({ style, className }) {
 }
 
 export default function App() {
-  // Simple manual routing for the admin dashboard
-  if (window.location.pathname === '/admin') {
-    return <AdminDashboard />;
-  }
-
   const [loaderDone, setLoaderDone] = useState(false);
 
   // Parse ?guest=Name from URL
@@ -157,6 +153,33 @@ export default function App() {
   useEffect(() => {
     // Console signature removed at user request
   }, []);
+
+  // Pre-calculate random properties for decorative elements to maintain hook purity
+  const crossPositions = useMemo(() => [...Array(6)].map((_, i) => ({
+    left: `${(i * 17) % 70 + 15}%`,
+    top: `${(i * 23) % 20 + 80}%`,
+    duration: 15 + ((i * 7) % 10),
+    delay: (i * 3) % 10
+  })), []);
+
+  const sparklePositions = useMemo(() => [...Array(12)].map((_, i) => ({
+    left: `${(i * 13) % 100}%`,
+    top: `${(i * 19) % 100}%`,
+    duration: 3 + ((i * 1.5) % 4),
+    delay: (i * 1.2) % 5
+  })), []);
+
+  const motePositions = useMemo(() => [...Array(8)].map((_, i) => ({
+    left: `${(i * 29) % 100}%`,
+    top: `${(i * 11) % 30 + 70}%`,
+    duration: 12 + ((i * 5) % 8),
+    delay: (i * 4) % 10
+  })), []);
+
+  // Simple manual routing for the admin dashboard
+  if (window.location.pathname === '/admin') {
+    return <AdminDashboard />;
+  }
 
   return (
     <div className="relative w-full bg-[var(--pearl)]">
@@ -173,34 +196,40 @@ export default function App() {
       <HolyDove style={{ top: '65%', right: '15%' }} />
 
       {/* Sacred Motifs (Crosses & Sparkles) */}
-      {[...Array(6)].map((_, i) => (
+      {crossPositions.map((pos, i) => (
         <SacredCross 
           key={`cross-${i}`} 
           style={{ 
-            left: `${15 + Math.random() * 70}%`, 
-            top: `${80 + Math.random() * 20}%` 
+            left: pos.left, 
+            top: pos.top 
           }} 
+          duration={pos.duration}
+          delay={pos.delay}
         />
       ))}
 
-      {[...Array(12)].map((_, i) => (
+      {sparklePositions.map((pos, i) => (
         <CelestialSparkle 
           key={`sparkle-${i}`} 
           style={{ 
-            left: `${Math.random() * 100}%`, 
-            top: `${Math.random() * 100}%` 
+            left: pos.left, 
+            top: pos.top 
           }} 
+          duration={pos.duration}
+          delay={pos.delay}
         />
       ))}
 
       {/* Sacred Dust Motes */}
-      {[...Array(8)].map((_, i) => (
+      {motePositions.map((pos, i) => (
         <SacredDustMote 
           key={`mote-${i}`} 
           style={{ 
-            left: `${Math.random() * 100}%`, 
-            top: `${70 + Math.random() * 30}%` 
+            left: pos.left, 
+            top: pos.top 
           }} 
+          duration={pos.duration}
+          delay={pos.delay}
         />
       ))}
 
@@ -226,6 +255,7 @@ export default function App() {
       <div className="scroll-container">
         <HeroCover guestName={guestName} />
         <InsideDetails guestName={guestName} />
+        <Gallery />
         <VenueSection />
         <RSVPForm />
       </div>

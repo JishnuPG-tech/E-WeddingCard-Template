@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { supabase } from '../config/supabase';
 import { Users, CheckCircle, XCircle, Lock, Database } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 
 export default function AdminDashboard() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -57,7 +57,7 @@ export default function AdminDashboard() {
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen bg-[#F8F7F4] flex items-center justify-center px-4 font-inter">
-        <motion.div 
+        <Motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full border border-[rgba(107,142,107,0.2)]"
@@ -91,7 +91,7 @@ export default function AdminDashboard() {
             </button>
             <a href="/" className="text-center text-xs text-[#7A7060] hover:text-[#B8913A] mt-2 underline">Return to Wedding Card</a>
           </form>
-        </motion.div>
+        </Motion.div>
       </div>
     );
   }

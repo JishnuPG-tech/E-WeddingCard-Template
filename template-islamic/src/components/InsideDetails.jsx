@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion as Motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { weddingData } from '../config/weddingData';
 
@@ -80,7 +80,7 @@ const MinimalCountdown = () => {
   );
 };
 
-export default function InsideDetails({ guestName }) {
+export default function InsideDetails() {
   const titleRef = useRef(null);
   const titleInView = useInView(titleRef, { once: true, margin: '-60px' });
 

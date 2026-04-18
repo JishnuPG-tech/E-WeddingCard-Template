@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion as Motion, useInView } from 'framer-motion';
 import { weddingData } from '../config/weddingData';
 
 const WEDDING_DATE = new Date(weddingData.dates.preciseDateIso);
@@ -21,7 +20,7 @@ const DetailRow = ({ label, value, delay = 0 }) => {
   const inView = useInView(ref, { once: true, margin: '-60px' });
 
   return (
-    <motion.div
+    <Motion.div
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -30,7 +29,7 @@ const DetailRow = ({ label, value, delay = 0 }) => {
     >
       <div className="font-inter text-[10px] uppercase tracking-[0.3em] text-[#B8913A] mb-1">{label}</div>
       <p className="font-cormorant text-2xl font-medium text-[#2C2C2C] leading-tight">{value}</p>
-    </motion.div>
+    </Motion.div>
   );
 };
 
@@ -38,7 +37,7 @@ const MuralDivider = ({ delay = 0 }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-60px' });
   return (
-    <motion.div
+    <Motion.div
       ref={ref}
       initial={{ opacity: 0, scaleX: 0 }}
       animate={inView ? { opacity: 1, scaleX: 1 } : {}}
@@ -52,7 +51,7 @@ const MuralDivider = ({ delay = 0 }) => {
         <circle cx="20" cy="8" r="1.5" fill="#6B8E6B" fillOpacity="0.4"/>
       </svg>
       <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[rgba(107,142,107,0.3)] to-transparent" />
-    </motion.div>
+    </Motion.div>
   );
 };
 
@@ -79,7 +78,7 @@ const MinimalCountdown = () => {
   );
 };
 
-export default function InsideDetails({ guestName }) {
+export default function InsideDetails() {
   const titleRef = useRef(null);
   const titleInView = useInView(titleRef, { once: true, margin: '-60px' });
 
@@ -87,7 +86,7 @@ export default function InsideDetails({ guestName }) {
     <section className="scroll-section flex items-center justify-center bg-[#F8F7F4] px-6 py-8 overflow-hidden">
       <div className="w-full max-w-sm mx-auto">
         {/* Section heading */}
-        <motion.div
+        <Motion.div
           ref={titleRef}
           initial={{ opacity: 0, y: 18 }}
           animate={titleInView ? { opacity: 1, y: 0 } : {}}
@@ -96,7 +95,7 @@ export default function InsideDetails({ guestName }) {
         >
           <p className="font-inter text-[10px] uppercase tracking-[0.35em] text-[#6B8E6B] mb-2">The Details</p>
           <h2 className="font-cormorant text-3xl font-semibold text-[#2C2C2C]">Ceremony &amp; Reception</h2>
-        </motion.div>
+        </Motion.div>
 
         {/* Card */}
         <div className="glass-card floral-border rounded-[20px] px-6 py-8 relative">
@@ -106,7 +105,7 @@ export default function InsideDetails({ guestName }) {
           <div className="absolute bottom-3 right-3 w-8 h-8 border-b border-r border-[#B8913A] border-opacity-35 rounded-br-[16px]" />
 
           {/* Calendar Block Design */}
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: '-60px' }}
@@ -129,7 +128,7 @@ export default function InsideDetails({ guestName }) {
             <div className="w-full mt-4 pt-4 border-t border-[rgba(107,142,107,0.15)]">
               <MinimalCountdown />
             </div>
-          </motion.div>
+          </Motion.div>
 
           <MuralDivider delay={0.15} />
           <DetailRow label={
@@ -147,7 +146,7 @@ export default function InsideDetails({ guestName }) {
           } value={weddingData.events.reception.timeText} delay={0.3} />
           <MuralDivider delay={0.35} />
 
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
@@ -159,12 +158,12 @@ export default function InsideDetails({ guestName }) {
              <p className="font-inter text-[12px] text-[#7A7060] leading-relaxed">
               {weddingData.venue.addressEn[0]}<br />{weddingData.venue.addressEn[1]}
             </p>
-          </motion.div>
+          </Motion.div>
 
           <MuralDivider delay={0.5} />
 
           {/* Hosted by */}
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
@@ -183,7 +182,7 @@ export default function InsideDetails({ guestName }) {
                 </>
               )}
             </p>
-          </motion.div>
+          </Motion.div>
         </div>
       </div>
     </section>

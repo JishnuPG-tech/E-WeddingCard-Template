@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 
 // Using a royalty-free Kerala instrumental from a CDN
 // You can replace this with your own audio file in /public
@@ -9,8 +9,6 @@ export default function MusicWidget() {
   const audioRef = useRef(null);
   const [muted, setMuted] = useState(false);
   const [started, setStarted] = useState(false);
-  const [visible, setVisible] = useState(true);
-
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -27,7 +25,7 @@ export default function MusicWidget() {
     document.addEventListener('click', () => {
       if (!started) tryPlay();
     }, { once: true });
-  }, []);
+  }, [started]);
 
   const toggleMute = () => {
     const audio = audioRef.current;
@@ -42,10 +40,9 @@ export default function MusicWidget() {
     setMuted(newMuted);
   };
 
-  if (!visible) return null;
 
   return (
-    <motion.div
+    <Motion.div
       initial={{ opacity: 0, x: 30 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 4, duration: 0.6 }}
@@ -78,14 +75,14 @@ export default function MusicWidget() {
       </button>
 
       {!started && (
-        <motion.span
+        <Motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="text-[10px] font-inter text-[#7A7060] bg-white/80 backdrop-blur px-2 py-1 rounded-full border border-[rgba(107,142,107,0.2)] shadow-sm"
         >
           Tap to play music
-        </motion.span>
+        </Motion.span>
       )}
-    </motion.div>
+    </Motion.div>
   );
 }

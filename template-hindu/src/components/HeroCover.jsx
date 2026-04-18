@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
+import { motion as Motion } from 'framer-motion';
 import { weddingData } from '../config/weddingData';
 
 // Floating decorative leaf SVG
@@ -54,7 +54,7 @@ export default function HeroCover({ guestName }) {
 
       {/* Main card */}
       <div className="w-full max-w-sm mx-auto px-6 py-12 text-center z-10 relative">
-        <motion.div
+        <Motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -68,14 +68,14 @@ export default function HeroCover({ guestName }) {
 
           {/* Small invitation label / Guest personalization badge */}
           {guestName ? (
-            <motion.div variants={itemVariants} className="flex justify-center mb-5">
-              <motion.div 
+            <Motion.div variants={itemVariants} className="flex justify-center mb-5">
+              <Motion.div 
                 animate={{ boxShadow: ['0px 0px 0px rgba(184,145,58,0)', '0px 4px 20px rgba(184,145,58,0.2)', '0px 0px 0px rgba(184,145,58,0)'] }}
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                 className="inline-block relative rounded-full px-7 py-3 bg-gradient-to-br from-[#FAF8F2] to-[#F2EBE0] border border-[#E5CA92] overflow-hidden shadow-sm"
               >
                 {/* Premium Glass Light Sweep */}
-                <motion.div 
+                <Motion.div 
                    animate={{ x: ['-200%', '250%'] }}
                    transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', repeatDelay: 1.5 }}
                    className="absolute top-0 bottom-0 w-1/3 bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.9)] to-transparent -skew-x-12 z-0"
@@ -85,53 +85,53 @@ export default function HeroCover({ guestName }) {
                   Exclusive Invitation For
                   <span className="font-semibold text-[#B8913A] tracking-[0.2em] text-[11px] mt-0.5 block drop-shadow-sm">{guestName}</span>
                 </p>
-              </motion.div>
-            </motion.div>
+              </Motion.div>
+            </Motion.div>
           ) : (
-            <motion.div variants={itemVariants} className="flex justify-center mb-5">
+            <Motion.div variants={itemVariants} className="flex justify-center mb-5">
               <div className="inline-block border border-[rgba(107,142,107,0.3)] shadow-sm rounded-full px-5 py-1.5 bg-[rgba(107,142,107,0.03)] backdrop-blur-sm">
                 <p className="font-inter text-[10px] uppercase tracking-[0.3em] text-[#7A7060]">
                   Wedding Invitation
                 </p>
               </div>
-            </motion.div>
+            </Motion.div>
           )}
 
           {/* Invite line with Malayalam Cultural Header */}
-          <motion.div variants={itemVariants} className="mb-5">
+          <Motion.div variants={itemVariants} className="mb-5">
             <p className="font-malayalam text-xl text-[#B8913A] opacity-80 mb-2 font-medium">{weddingData.strings.invitePrimaryMl}</p>
             <p className="font-cormorant text-[15px] italic text-[#7A7060] leading-relaxed max-w-[240px] mx-auto">
               {weddingData.strings.inviteSecondaryEn}
             </p>
-          </motion.div>
+          </Motion.div>
 
           {/* Couple names */}
-          <motion.h1 variants={itemVariants} className="font-cormorant font-bold text-5xl leading-[0.9] tracking-[-0.02em] mb-2 gold-shimmer">
+          <Motion.h1 variants={itemVariants} className="font-cormorant font-bold text-5xl leading-[0.9] tracking-[-0.02em] mb-2 gold-shimmer">
             {weddingData.couple.groom}
-          </motion.h1>
-          <motion.p variants={itemVariants} className="font-cormorant italic text-lg text-[#B8913A] mb-2">{weddingData.couple.ampersand}</motion.p>
-          <motion.h1 variants={itemVariants} className="font-cormorant font-bold text-5xl leading-[0.9] tracking-[-0.02em] mb-8 gold-shimmer">
+          </Motion.h1>
+          <Motion.p variants={itemVariants} className="font-cormorant italic text-lg text-[#B8913A] mb-2">{weddingData.couple.ampersand}</Motion.p>
+          <Motion.h1 variants={itemVariants} className="font-cormorant font-bold text-5xl leading-[0.9] tracking-[-0.02em] mb-8 gold-shimmer">
             {weddingData.couple.bride}
-          </motion.h1>
+          </Motion.h1>
 
           {/* Lotus accent moved to bottom center */}
-          <motion.div variants={itemVariants} className="mb-4">
+          <Motion.div variants={itemVariants} className="mb-4">
             <LotusMini />
-          </motion.div>
+          </Motion.div>
 
           {/* Date teaser */}
-          <motion.div variants={itemVariants}>
+          <Motion.div variants={itemVariants}>
             <div className="ornamental-divider text-[#B8913A] text-xs mb-4">
               <span>✦</span>
             </div>
             <p className="font-inter text-[12px] uppercase tracking-[0.25em] text-[#7A7060]">
               {weddingData.dates.headerDisplay}
             </p>
-          </motion.div>
-        </motion.div>
+          </Motion.div>
+        </Motion.div>
 
         {/* Scroll indicator */}
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
@@ -143,7 +143,7 @@ export default function HeroCover({ guestName }) {
               <path d="M12 5v14M5 12l7 7 7-7"/>
             </svg>
           </div>
-        </motion.div>
+        </Motion.div>
       </div>
     </section>
   );

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Envelope from './components/Envelope';
 import HeroCover from './components/HeroCover';
 import InsideDetails from './components/InsideDetails';
+import Gallery from './components/Gallery';
 import VenueSection from './components/VenueSection';
 import RSVPForm from './components/RSVPForm';
 import MusicWidget from './components/MusicWidget';
@@ -23,24 +24,21 @@ function FloatingLeaf({ style, className }) {
 }
 
 export default function App() {
+  const [loaderDone, setLoaderDone] = useState(false);
+
+  // Clean logs
+  useEffect(() => {
+    // Console signature removed
+  }, []);
+
   // Simple manual routing for the admin dashboard
   if (window.location.pathname === '/admin') {
     return <AdminDashboard />;
   }
 
-  const [loaderDone, setLoaderDone] = useState(false);
-
   // Parse ?guest=Name from URL
   const params = new URLSearchParams(window.location.search);
   const guestName = params.get('guest') || '';
-
-  // Clean logs
-  useEffect(() => {
-    // Console signature removed at user request
-  }, []);
-
-  // Loader/Envelope state removes the forced timeout, relying on Envelope button click
-  // so we don't auto-dissolve the loader until they "open" it.
   
   return (
     <div className="relative w-full bg-[#F8F7F4]">
@@ -69,6 +67,7 @@ export default function App() {
       <div className="scroll-container">
         <HeroCover guestName={guestName} />
         <InsideDetails guestName={guestName} />
+        <Gallery />
         <VenueSection />
         <RSVPForm />
       </div>

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion as Motion } from 'framer-motion';
+﻿import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { weddingData } from '../config/weddingData';
 
 export default function Envelope({ onOpen }) {
@@ -13,7 +13,7 @@ export default function Envelope({ onOpen }) {
   };
 
   return (
-    <Motion.div 
+    <motion.div 
       className="fixed inset-0 z-50 flex items-center justify-center bg-[#1F2620] overflow-hidden"
       animate={{ 
          backgroundColor: isOpen ? 'rgba(31,38,32,0)' : '#1F2620',
@@ -21,16 +21,16 @@ export default function Envelope({ onOpen }) {
       }}
       transition={{ delay: 1.6, duration: 0.8 }}
     >
-      <Motion.div className="relative w-[320px] h-[220px]">
+      <motion.div className="relative w-[320px] h-[220px]">
         {/* Back of Envelope */}
-        <Motion.div 
+        <motion.div 
           className="absolute inset-0 bg-[#E8E6E0] rounded-sm shadow-2xl"
           animate={{ y: isOpen ? 500 : 0, opacity: isOpen ? [1, 1, 1, 0] : 1 }}
           transition={{ delay: 0.8, duration: 1, ease: 'easeIn' }}
         />
 
         {/* The Invitation Card sliding up and scaling - Structural Parity */}
-        <Motion.div 
+        <motion.div 
           className="absolute inset-x-3 top-4 h-[200px] bg-[var(--ivory)] rounded-t-lg flex flex-col items-center justify-start pt-8 border border-[var(--gold)]/15 z-10"
           initial={{ y: 0, scale: 1 }}
           animate={{ 
@@ -39,7 +39,7 @@ export default function Envelope({ onOpen }) {
           }}
           transition={{ duration: 2.2, times: [0, 0.2, 0.6, 1], ease: "easeInOut" }}
         >
-          <Motion.div 
+          <motion.div 
             animate={{ opacity: isOpen ? 0 : 1 }} 
             transition={{ delay: 0.8, duration: 0.4 }}
             className="px-4 text-center"
@@ -50,11 +50,11 @@ export default function Envelope({ onOpen }) {
               <span className="text-[var(--sage)] text-xl mx-2">&amp;</span> 
               {weddingData.couple.bride}
             </p>
-          </Motion.div>
-        </Motion.div>
+          </motion.div>
+        </motion.div>
 
         {/* Front Flaps Layer (Parity with Hindu) */}
-        <Motion.div 
+        <motion.div 
           className="absolute inset-0 overflow-hidden rounded-sm pointer-events-none z-20"
           animate={{ y: isOpen ? 500 : 0, opacity: isOpen ? [1, 1, 1, 0] : 1 }}
           transition={{ delay: 0.8, duration: 1, ease: 'easeIn' }}
@@ -86,10 +86,10 @@ export default function Envelope({ onOpen }) {
               left: '0px', top: '70px'
             }}
           />
-        </Motion.div>
+        </motion.div>
 
         {/* Top Flap (Animated - Parity) */}
-        <Motion.div 
+        <motion.div 
           className="absolute inset-x-0 top-0 h-[120px] origin-top z-30"
           initial={{ rotateX: 0, y: 0, opacity: 1 }}
           animate={{ 
@@ -123,19 +123,19 @@ export default function Envelope({ onOpen }) {
               </div>
             </button>
           )}
-        </Motion.div>
-      </Motion.div>
+        </motion.div>
+      </motion.div>
       
       {/* Instruction text */}
       {!isOpen && (
-        <Motion.p 
+        <motion.p 
           className="absolute bottom-12 text-white/50 font-inter text-[10px] tracking-[0.4em] uppercase pointer-events-none"
           animate={{ opacity: [0.3, 0.8, 0.3] }}
           transition={{ repeat: Infinity, duration: 2.5 }}
         >
           Tap the seal to open
-        </Motion.p>
+        </motion.p>
       )}
-    </Motion.div>
+    </motion.div>
   );
 }

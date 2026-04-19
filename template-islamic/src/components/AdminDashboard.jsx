@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { supabase } from '../config/supabase';
 import { Users, CheckCircle, XCircle, Lock, Database } from 'lucide-react';
-import { motion as Motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export default function AdminDashboard() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

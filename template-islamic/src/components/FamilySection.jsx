@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { motion as Motion, useInView } from 'framer-motion';
+﻿import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { weddingData } from '../config/weddingData';
 
 const FamilyCard = ({ side, delay }) => {

@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion as Motion } from 'framer-motion';
+﻿import React from 'react';
+import { motion } from 'framer-motion';
 import { weddingData } from '../config/weddingData';
 
 // Floating decorative lantern SVG
@@ -24,9 +24,7 @@ const CrescentMini = () => (
 
 const containerVariants = {
   hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.18 },
-  },
+  visible: { transition: { staggerChildren: 0.18 } },
 };
 
 const itemVariants = {
@@ -37,7 +35,7 @@ const itemVariants = {
 export default function HeroCover({ guestName }) {
   return (
     <section className="scroll-section relative flex items-center justify-center overflow-hidden bg-transparent">
-      {/* Background decorative elements (Hindu structure parity) */}
+      {/* Background decorative lanterns */}
       <div className="float-leaf absolute -top-4 -left-6 opacity-40 pointer-events-none" style={{ width: 100 }}>
         <LanternSvg />
       </div>
@@ -59,7 +57,7 @@ export default function HeroCover({ guestName }) {
           animate="visible"
           className="glass-card floral-border rounded-[20px] px-8 py-10 relative"
         >
-          {/* Corner flourishes (Hindu base parity) */}
+          {/* Corner flourishes */}
           <div className="absolute top-4 left-4 w-10 h-10 border-t border-l border-[var(--gold)] border-opacity-20 rounded-tl-lg" />
           <div className="absolute top-4 right-4 w-10 h-10 border-t border-r border-[var(--gold)] border-opacity-20 rounded-tr-lg" />
           <div className="absolute bottom-4 left-4 w-10 h-10 border-b border-l border-[var(--gold)] border-opacity-20 rounded-bl-lg" />
@@ -73,7 +71,6 @@ export default function HeroCover({ guestName }) {
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                 className="inline-block relative rounded-full px-7 py-3 bg-gradient-to-br from-[var(--ivory)] to-[#F2EBE0] border border-[var(--gold)]/30 overflow-hidden shadow-sm"
               >
-                {/* Premium Glass Light Sweep */}
                 <motion.div
                   animate={{ x: ['-200%', '250%'] }}
                   transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', repeatDelay: 1.5 }}
@@ -95,7 +92,7 @@ export default function HeroCover({ guestName }) {
             </motion.div>
           )}
 
-          {/* Islamic Arabic Header (Bismillah) */}
+          {/* Bismillah */}
           <motion.div variants={itemVariants} className="mb-5 mt-0 px-2">
             <p className="font-amiri text-xl text-[var(--gold)] leading-none mb-2 opacity-90 drop-shadow-sm">
               {weddingData.strings.bismillahArabic}
@@ -109,12 +106,14 @@ export default function HeroCover({ guestName }) {
           <motion.h1 variants={itemVariants} className="font-playfair font-bold text-5xl leading-[0.9] tracking-[-0.02em] mb-2 gold-shimmer drop-shadow-sm">
             {weddingData.couple.groom}
           </motion.h1>
-          <motion.p variants={itemVariants} className="font-cormorant italic text-lg text-[var(--sage)] opacity-60 mb-2">{weddingData.couple.ampersand}</motion.p>
+          <motion.p variants={itemVariants} className="font-cormorant italic text-lg text-[var(--sage)] opacity-60 mb-2">
+            {weddingData.couple.ampersand}
+          </motion.p>
           <motion.h1 variants={itemVariants} className="font-playfair font-bold text-5xl leading-[0.9] tracking-[-0.02em] mb-8 gold-shimmer drop-shadow-sm">
             {weddingData.couple.bride}
           </motion.h1>
 
-          {/* Crescent icon parity with Lotus */}
+          {/* Crescent icon */}
           <motion.div variants={itemVariants} className="mb-4">
             <CrescentMini />
           </motion.div>

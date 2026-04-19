@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion as Motion } from 'framer-motion';
+﻿import React, { useState, useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 // Using a royalty-free Kerala instrumental from a CDN
 // You can replace this with your own audio file in /public
@@ -42,7 +42,7 @@ export default function MusicWidget() {
   };
 
   return (
-    <Motion.div
+    <motion.div
       initial={{ opacity: 0, x: 30 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 4, duration: 0.6 }}
@@ -83,6 +83,6 @@ export default function MusicWidget() {
           Tap to play music
         </motion.span>
       )}
-    </Motion.div>
+    </motion.div>
   );
 }

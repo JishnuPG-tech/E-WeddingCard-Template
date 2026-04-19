@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { motion as Motion, AnimatePresence, useInView } from 'framer-motion';
+﻿import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { weddingData } from '../config/weddingData';
 
 // ─── Lightbox ────────────────────────────────────────────────────────────────
@@ -44,7 +44,7 @@ function Lightbox({ photos, startIndex, onClose }) {
   };
 
   return (
-    <Motion.div
+    <motion.div
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -88,7 +88,7 @@ function Lightbox({ photos, startIndex, onClose }) {
         }}
       >
         <AnimatePresence mode="wait" custom={direction}>
-          <Motion.div
+          <motion.div
             key={index}
             custom={direction}
             variants={variants}
@@ -110,7 +110,7 @@ function Lightbox({ photos, startIndex, onClose }) {
                 {photos[index].alt}
               </p>
             )}
-          </Motion.div>
+          </motion.div>
         </AnimatePresence>
       </div>
 
@@ -150,7 +150,7 @@ function Lightbox({ photos, startIndex, onClose }) {
           />
         ))}
       </div>
-    </Motion.div>
+    </motion.div>
   );
 }
 
@@ -161,7 +161,7 @@ function GalleryItem({ photo, index, onClick }) {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <Motion.div
+    <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -193,7 +193,7 @@ function GalleryItem({ photo, index, onClick }) {
 
       {/* Gold border on hover */}
       <div className="absolute inset-0 rounded-2xl border border-[var(--gold)]/0 group-hover:border-[var(--gold)]/30 transition-all duration-400" />
-    </Motion.div>
+    </motion.div>
   );
 }
 
@@ -209,7 +209,7 @@ export default function Gallery() {
   return (
     <section className="scroll-section flex flex-col items-center justify-start bg-transparent px-5 py-12 overflow-hidden">
       {/* Section heading */}
-      <Motion.div
+      <motion.div
         ref={titleRef}
         initial={{ opacity: 0, y: 18 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -232,7 +232,7 @@ export default function Gallery() {
           </svg>
           <div className="h-px w-12 bg-gradient-to-l from-transparent to-[var(--gold)]/40" />
         </div>
-      </Motion.div>
+      </motion.div>
 
       {/* Masonry Grid */}
       <div
@@ -250,14 +250,14 @@ export default function Gallery() {
       </div>
 
       {/* Tap hint */}
-      <Motion.p
+      <motion.p
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ delay: 0.8, duration: 0.6 }}
         className="mt-5 font-inter text-[9.5px] uppercase tracking-[0.3em] text-[var(--text-muted)] opacity-60"
       >
         Tap any photo to view
-      </Motion.p>
+      </motion.p>
 
       {/* Lightbox */}
       <AnimatePresence>

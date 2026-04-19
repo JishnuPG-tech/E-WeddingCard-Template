@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion as Motion, useInView } from 'framer-motion';
+﻿import React, { useState, useEffect } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { weddingData } from '../config/weddingData';
 

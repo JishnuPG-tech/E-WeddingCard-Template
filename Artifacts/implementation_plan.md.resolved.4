@@ -1,0 +1,40 @@
+# Premium Feature Upgrades
+
+We are going to implement the 3 luxurious features you selected to make this E-Wedding Card truly spectacular!
+
+## Proposed Changes
+
+### Feature 4: Interactive Add to Calendar (Apple & Google)
+*Context: We currently have a simple Google Calendar link in `VenueSection.jsx`, but iOS users typically need `.ics` files.*
+- **Upgrade**: We will refactor the Calendar button into a smart component. When clicked, it will provide options or directly download a dynamic `.ics` calendar file so it automatically works perfectly on both Apple Calendar (iPhones) and Outlook, alongside Google Calendar.
+
+#### [MODIFY] VenueSection.jsx
+
+---
+
+### Feature 5: Multi-Language Typography (Malayalam)
+- **Fonts**: We'll add Google's highly elegant `Noto Serif Malayalam` font to the application.
+- **HeroCover Integration**: We will beautifully inject Malayalam calligraphy (`വിവാഹ ക്ഷണം` - Wedding Invitation) underneath the top badge to anchor the Kerala aesthetic.
+- **Micro-touches**: We can selectively sprinkle secondary Malayalam headers (like 'മുഹൂർത്തം' for Muhurtham) throughout the detail cards in a soft gold or sage color.
+
+#### [MODIFY] index.html
+#### [MODIFY] index.css
+#### [MODIFY] HeroCover.jsx
+#### [MODIFY] InsideDetails.jsx
+
+---
+
+### Feature 6: Interactive Digital Envelope
+*Context: The current page just fades in with a Lotus loader. We will replace this with a physical-feeling envelope.*
+- **New Component**: Create `Envelope.jsx`.
+- **Interaction**: The user lands on a sealed Ivory envelope. 
+- **Animation**: When tapped, the wax seal fades out, the top flap magically folds open (3D `rotateX`), and the main invitation card slides upwards from inside the envelope, triggering the rest of the site to reveal!
+- **Cleanup**: We will replace the old `LotusLoader` across the app with this new Envelope experience.
+
+#### [NEW] Envelope.jsx
+#### [MODIFY] App.jsx
+#### [DELETE] LotusLoader.jsx
+
+## User Approval Needed
+> [!IMPORTANT]
+> Please review the plan above! If you are happy with the dynamic `.ics` calendar generation, the Malayalam typography additions, and the Envelope animation flow, reply with **"Approve"** and I will immediately build and execute the features!

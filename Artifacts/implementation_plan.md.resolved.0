@@ -1,0 +1,66 @@
+# Wedding Card UI Clone Implementation Plan
+
+We will build a pixel-perfect, responsive clone of the provided wedding invitation website using a modern stack: **React (via Vite) and Tailwind CSS**. This ensures the smooth animations, frosted glass effects, and exact typography are seamlessly replicated.
+
+## User Review Required
+
+> [!NOTE]
+> Please review this plan. If you approve, I will automatically initialize the project in your `WeddingCard` folder and build out all the files.
+
+> [!IMPORTANT]
+> The original site uses custom SVG line-art flowers in the corners. I will create visually similar CSS/SVG placeholders for these. If you have the exact SVG files later, they can be easily swapped in.
+
+## Proposed Changes
+
+We will initialize a new React project in the current directory and implement the following structure:
+
+### 1. Project Setup
+- Generate a standard React template using Vite.
+- Install Tailwind CSS and its dependencies.
+- Add Framer Motion for smooth scroll and entry animations (replicating the "Next.js hydrating" feel).
+
+### 2. Global Styling & Configuration
+
+#### [MODIFY] `index.html`
+- Import Google Fonts: `Cormorant Garamond` (weights 400, 500, 600) and `Montserrat` (weights 300, 400, 500).
+
+#### [MODIFY] `tailwind.config.js`
+- Set up custom color palette:
+  - `wedding-bg`: `#F5F4F0` (Cream)
+  - `wedding-green`: `#6B8E6B` (Sage text/SVG)
+  - `wedding-green-light`: `#E8F0E8` (RSVP button bg)
+  - `wedding-red-light`: `#FCE8E8` (Decline button bg)
+  - `wedding-red`: `#D9534F` (Decline text)
+- Add custom font families (`cormorant`, `montserrat`).
+
+#### [MODIFY] `index.css`
+- Implement the global grain/noise overlay using an SVG data-URI filter to achieve the premium textured background look.
+
+### 3. React Components
+
+#### [NEW] `src/App.jsx`
+- The main wrapper. It will manage the full-screen fixed background (cream + noise) and the central, centered layout container for the `Card`.
+
+#### [NEW] `src/components/WeddingCard.jsx`
+- The core glassmorphic container (`bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl`). It will be vertically scrollable with hidden scrollbars for a clean look.
+
+#### [NEW] `src/components/TopHero.jsx`
+- The top section featuring the star icon, "We Can't Wait!", the couple's names in large `Cormorant` font, and the general invitation text.
+
+#### [NEW] `src/components/EventDetails.jsx`
+- A split layout or simple stacked layout showing:
+  - Date (14 April, 04 PM)
+  - Venue (Malabar Marina) with a location button.
+  - "Click here for location" button mimicking the pill-shape UI.
+
+#### [NEW] `src/components/Countdown.jsx`
+- The 4-box layout displaying Days, Hours, Mins, Secs. Clean white boxes with inner shadows.
+
+#### [NEW] `src/components/RSVPSection.jsx`
+- Contains the "Will you attend?" prompt and the two large, bordered selection cards (Yes / No).
+- Includes the bottom "Edit Response" sticky button.
+
+## Verification Plan
+
+### Automated/Manual Verification
+- Once built, I will run `npm run dev` and use the background browser tool to snap a screenshot of our running clone so we can compare it side-by-side with the original site screenshots.

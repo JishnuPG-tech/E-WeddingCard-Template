@@ -1,0 +1,8 @@
+- [ ] Sync Configuration (`weddingData.js`)
+- [ ] Apply Theme Variables (`index.css`)
+- [ ] Update Background Animations (`App.jsx`)
+- [ ] Refine Hero Component (`HeroCover.jsx`)
+- [ ] Update Envelope & Wax Seal (`Envelope.jsx`)
+- [ ] Refine Detail Component (`InsideDetails.jsx`)
+- [ ] Update RSVP Form (`RSVPForm.jsx`)
+- [ ] Final Verification

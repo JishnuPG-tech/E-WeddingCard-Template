@@ -1,0 +1,52 @@
+# Admin RSVP Dashboard Implementation
+
+We will add a dedicated, private admin dashboard to the web application so you (or your clients) can view and track all submitted RSVPs in real-time. 
+
+## 1. Routing Strategy
+We will use simple, lightweight browser routing. By visiting `yourwebsite.com/admin`, the web application will bypass the wedding envelope and instead render the Admin Dashboard component. This avoids the need to install heavy routing libraries like `react-router-dom`.
+
+## 2. Supabase Integration Setup
+Currently, the Supabase connection code is coupled tightly inside `RSVPForm.jsx`. 
+To allow the new dashboard to fetch data, we will:
+1. Extract the Supabase client logic into a new centralized file: `src/config/supabase.js`.
+2. Refactor `RSVPForm.jsx` to use this centralized client.
+3. Use the centralized client in the new Admin Dashboard to fetch the `rsvps` table.
+
+## 3. Creating the Dashboard UI (`src/components/AdminDashboard.jsx`)
+The dashboard will be a clean, enterprise-style interface built with Tailwind CSS.
+It will feature:
+* **Top Stats Cards:** Showing "Total Responses", "Total Guests Attending", and "Declined".
+* **Data Table:** A visually stunning table listing:
+  * Guest Name
+  * Status (Attending / Not Attending)
+  * Guest Count (+1, +2, etc.)
+  * Timestamp 
+* **Authentication/Security Gate:** A simple UI layer that prompts the user for an Admin PIN or Password to prevent random site visitors who stumble upon `/admin` from seeing the guest list.
+
+## 4. Proposed Changes
+
+### Configuration
+#### [NEW] `src/config/supabase.js`
+- Export the initialized `supabaseClient` using the existing `.env` variables.
+
+### Components
+#### [MODIFY] `src/components/RSVPForm.jsx`
+- Remove the local Supabase setup and import it from `supabase.js`.
+#### [NEW] `src/components/AdminDashboard.jsx`
+- The React functional component handling state (loading, auth, data fetching).
+- UI structure for stats widgets and the RSVP data table.
+- A simple password form to unlock the dashboard.
+
+### Core Entry
+#### [MODIFY] `src/App.jsx`
+- Add a check at the top: `if (window.location.pathname === '/admin') return <AdminDashboard />;`
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Admin Password Security:** Do you want me to hard-code a generic PIN logic (e.g., "1234") into the code for the admin dashboard login, or would you prefer me to set up a dummy password in the `.env` file (e.g., `VITE_ADMIN_PASSWORD`) so you can change it securely later?
+
+> [!TIP]
+> This plan uses lightweight manual routing, so we avoid bloating your package size. When hosted on Vercel, this will seamlessly work out of the box!
+
+Please review and approve the plan or tell me how to proceed.

@@ -1,0 +1,9 @@
+# Christian Enhanced Animations Task List
+
+- [x] Update `App.jsx` in `template-christian`
+    - [x] Redefine `DivineLightBeam` for better visibility and definition.
+    - [x] Create `CelestialSparkle` component for twinkling starlight.
+    - [x] Create `HolyDove` component for subtle floating silhouettes.
+    - [x] Create `SacredCross` component for drifting minimalist motifs.
+    - [x] Integrate new sacred elements into the main `App` layout with optimized layering.
+- [x] Finalize vertical spacing and scroll performance.

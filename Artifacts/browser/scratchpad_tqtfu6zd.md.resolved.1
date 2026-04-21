@@ -1,0 +1,52 @@
+# Website Analysis: Saleem's Wedding Invitation
+
+## URL: https://mnm.miraiznlabs.com/suhail-sahal-saleem/atheef-abdul-rahman-mnwz1xob?v=4
+
+## Initial Observations
+- **Theme**: Elegant, minimal, wedding invitation.
+- **Color Palette**: 
+  - Background: Very light cream/off-white (`#F0F4EC` elements seen in DOM).
+  - Accent: Sage green (`#6B8E6B`).
+  - Text: Dark gray/greenish-black.
+- **Components**:
+  - Modal/Card: `bg-white/95 backdrop-blur-xl`, `shadow-2xl`, `border-white`.
+  - Icon: Star/glimmer icon in a circle.
+  - Buttons: Pill-shaped, light green background, border, hover animations.
+- **Interactive Elements**:
+  - "Click here for location" button (Google Maps link).
+  - Phone number button.
+  - Scrollable card content.
+
+## Checklist
+- [ ] Capture all sections (Hero, Countdown, Event, Gallery, RSVP, Footer).
+- [ ] Analyze CSS for exact colors and fonts.
+- [ ] Extract all text content.
+- [ ] Document animations.
+- [ ] Identify images and icons.
+
+## Current Findings
+- **Modal Content**:
+  - Header: "We Can't Wait!"
+  - Names: "ATHEEF ABDUL RAHMAN"
+  - RSVP Status: "Your RSVP has been received! We look forward to celebrating with you."
+  - Event Date: "14 APR"
+  - Event Time: "Reception Time 04 PM"
+  - Location: "MALABAR MARINA, Cheruvannur, Calicut"
+  - Countdown: Days, Hours, Mins, Secs (currently ~4 hours left).
+  - Buttons:
+    - "Click here for location": Pill-shaped, light green background (`#F0F4EC`), sage green text (`#6B8E6B`), pulse animation.
+    - Phone Number: `999 555 8877`, light green background.
+    - "Edit Response": Dark gray button (`#2d3436`), white uppercase text.
+- **Background**: Soft gradient with floral/leaf patterns.
+- **Animations**: Pulse animation on the location button.
+
+## Pending Sections (mentioned in instructions but not seen yet)
+- [ ] Hero section (might be the background or a separate page)
+- [ ] Gallery section
+- [ ] RSVP section (current view is a confirmation, maybe the form is different)
+- [ ] Footer
+
+## Action Plan
+1. Try to find a way to dismiss the modal/overlay.
+2. Check if there are other sub-pages or sections hidden.
+3. Analyze CSS for exact font families and colors.

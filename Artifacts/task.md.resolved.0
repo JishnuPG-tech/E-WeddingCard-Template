@@ -1,0 +1,16 @@
+# Premium E-Wedding Card UI Upgrades
+
+- [/] Update `index.css`
+  - [ ] Add SVG Noise texture to global background
+  - [ ] Tune `.glass-card` to match reference deep blur
+- [ ] Update `HeroCover.jsx`
+  - [ ] Wrap `guestName` in an elegant pill badge
+  - [ ] Refine typography tracking/spacing
+- [ ] Update `InsideDetails.jsx`
+  - [ ] Implement elegant 3-column Calendar Date Block
+  - [ ] Embed minimal inline countdown timer
+- [ ] Update `RSVPForm.jsx`
+  - [ ] Refactor RSVP buttons into square, large-icon interactive tiles
+- [ ] Refactor `App.jsx`
+  - [ ] Remove importing and rendering of `CountdownTimer.jsx`
+  - [ ] Delete `CountdownTimer.jsx` file

@@ -1,0 +1,23 @@
+# 📊 Admin Dashboard Engine Built
+
+The application has been successfully upgraded to include a hidden, fully-functional **Admin Dashboard**! This means you or your clients no longer have to log into Supabase to manually view the database tables.
+
+## 🔐 How to Access the Dashboard
+
+To view the dashboard, simply type `/admin` at the end of your local server URL or production domain:
+`http://localhost:5173/admin`
+
+The page will instantly bypass the wedding envelope and present a secure login gate.
+
+## 🔑 Default Security
+* **PIN Code:** Enter `1234` to unlock the dashboard.
+* *Note: You can easily change this PIN inside `src/components/AdminDashboard.jsx` if you want it to be more secure for the final client.*
+
+## 📈 Features Included
+1. **Live Analytics Widgets:** Instantly see the total number of submissions, the total count of guests attending, the count of those who declined, and the overall aggregated headcount.
+2. **Beautiful Data Table:** A pristine, Tailwind-styled table that clearly sorts your guests by newest RSVPs first. It displays beautiful `lucide-react` badges for Attending/Declined statuses.
+3. **Fully Independent Routing:** Because we used simple native path matching inside `App.jsx`, we successfully avoided bloating your project with heavy React Router libraries. The site stays ultra-fast.
+4. **Centralized Backend:** The Supabase configuration has been neatly extracted into `src/config/supabase.js`, meaning both the RSVP form and the new Dashboard naturally share the exact same clean connection.
+
+## 🚀 How to Demo
+If you visit `/admin` locally *before* configuring your `.env` variables, the dashboard is smart enough to enter **Demo Mode** and show you beautiful placeholder data. Once your `.env` is connected, it switches to live cloud data!

@@ -1,0 +1,11 @@
+# Divine Radiance Background Implementation
+
+- [ ] Update `App.jsx` in `template-christian`
+    - [ ] Remove legacy `FloatingPetal` component and its CSS animations.
+    - [ ] Create `DivineLightBeam` component (Pulse & Drift).
+    - [ ] Create `SacredDustMote` component (Random Upward Drift).
+    - [ ] Create `OliveLeaf` component (SVG replacement for petals).
+    - [ ] Integrate background elements into the `App` render.
+- [ ] Update `index.css` in `template-christian`
+    - [ ] Add animations for `light-beam-glow` and `mote-upward-drift`.
+- [ ] Verify visual harmony with the glass cards.

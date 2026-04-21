@@ -1,0 +1,30 @@
+# Website Analysis: Saleem's Wedding Invitation
+
+## URL: https://mnm.miraiznlabs.com/suhail-sahal-saleem/atheef-abdul-rahman-mnwz1xob?v=4
+
+## Initial Observations
+- **Theme**: Elegant, minimal, wedding invitation.
+- **Color Palette**: 
+  - Background: Very light cream/off-white (`#F0F4EC` elements seen in DOM).
+  - Accent: Sage green (`#6B8E6B`).
+  - Text: Dark gray/greenish-black.
+- **Components**:
+  - Modal/Card: `bg-white/95 backdrop-blur-xl`, `shadow-2xl`, `border-white`.
+  - Icon: Star/glimmer icon in a circle.
+  - Buttons: Pill-shaped, light green background, border, hover animations.
+- **Interactive Elements**:
+  - "Click here for location" button (Google Maps link).
+  - Phone number button.
+  - Scrollable card content.
+
+## Checklist
+- [ ] Capture all sections (Hero, Countdown, Event, Gallery, RSVP, Footer).
+- [ ] Analyze CSS for exact colors and fonts.
+- [ ] Extract all text content.
+- [ ] Document animations.
+- [ ] Identify images and icons.
+
+## Current Progress
+- Opened the website.
+- Captured initial screenshot.
+- Identified basic color scheme and layout (modal-based for current state).

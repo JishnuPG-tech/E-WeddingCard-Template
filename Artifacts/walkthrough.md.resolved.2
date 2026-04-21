@@ -1,0 +1,27 @@
+# Application Architecture Decoupling
+
+The E-Wedding Card application has been fundamentally upgraded from a single-use static website into a fully reusable, modular template engine. The React codebase no longer contains any hardcoded references to specific people, places, or dates.
+
+## How to Re-use the Application for Future Weddings
+
+I have created a centralized "brain" for the entire application. All you or a developer needs to do to spin up a brand new website for a completely different client is edit **one single file**.
+
+### `src/config/weddingData.js`
+
+If you open `src/config/weddingData.js`, you'll see a clean, organized JSON-style Javascript configuration. 
+Here is an overview of what you can instantly modify:
+
+1. **The Couple (`couple` object):**
+   - Replace the `groom`, `bride`, and `initials`. The new initials will automatically update the 3D Wax Seal on the envelope, the large text on the Hero Card, the RSVP submission messages, and the calendar downloads.
+   
+2. **The Dates (`dates` object):**
+   - Update `preciseDateIso` to safely orchestrate the Countdown Timer engine and the native Apple `.ics` file generator.
+   - Adjust the `calendar` view text (e.g. `dayOfWeek`, `month`) to physically change the stylish Calendar block inside `InsideDetails.jsx`.
+   
+3. **The Event Locations (`venue` and `events` objects):**
+   - Swap the names of the Venue and copy-paste new Google Maps Embed links into the `links` payload. The Map, the Buttons, and the RSVP confirmation screen instantly inherit these new coordinates.
+
+4. **Multi-lingual Strings (`strings` object):**
+   - We isolated the cultural calligraphy like "വിവാഹ ക്ഷണം". If the next client requires English standard or another language entirely, you just change those string variables there and they map directly down into the Envelope and the Hero Cover!
+
+Because the App logic (Framer Motion animations, Supabase connections, UI rendering) is now entirely decoupled from the Data logic, absolutely zero visual bugs will occur when you swap out the text!

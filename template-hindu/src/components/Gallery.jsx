@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion as Motion, AnimatePresence, useInView } from 'framer-motion';
-import { weddingData } from '../config/weddingData';
+import { galleryPhotos } from '../config/galleryData';
 
 // ─── Lightbox ────────────────────────────────────────────────────────────────
 function Lightbox({ photos, startIndex, onClose }) {
@@ -202,7 +202,7 @@ export default function Gallery() {
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const titleRef = useRef(null);
   const inView = useInView(titleRef, { once: true, margin: '-60px' });
-  const photos = weddingData.gallery || [];
+  const photos = galleryPhotos;
 
   if (!photos.length) return null;
 

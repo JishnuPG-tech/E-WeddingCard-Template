@@ -68,8 +68,10 @@ export default function RSVPForm() {
   const [liveCount, setLiveCount] = useState(null);
 
   useEffect(() => {
+    if (!supabase) return;
     supabase.from('rsvps').select('guest_count').eq('attending', true)
-      .then(({ data }) => { if (data) setLiveCount(data.reduce((s, r) => s + (r.guest_count || 1), 0)); });
+      .then(({ data }) => { if (data) setLiveCount(data.reduce((s, r) => s + (r.guest_count || 1), 0)); })
+      .catch(() => {}); // silent – rsvps table may not exist yet
   }, []);
 
   const set = (k, v) => setForm(f => ({ ...f, [k]: v }));
@@ -77,6 +79,7 @@ export default function RSVPForm() {
   const submit = async (e) => {
     e.preventDefault();
     if (!form.name.trim()) return;
+    if (!supabase) { setStatus('error'); return; }
     if (navigator.vibrate) navigator.vibrate(30);
     setStatus('loading');
     const { error } = await supabase.from('rsvps').insert({

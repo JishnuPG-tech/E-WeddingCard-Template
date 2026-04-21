@@ -5,25 +5,18 @@ export const weddingData = {
     ampersand: "&",
     initials: "G&E"
   },
-  
+
   dates: {
-    // JavaScript parsable ISO format (used for countdown & ICS file)
     preciseDateIso: "2026-12-20T11:00:00+05:30",
     rsvpDeadlineIso: "2026-05-10T23:59:59+05:30",
-    
-    // UI strings for the calendar view
     calendar: {
       dayOfWeek: "Sunday",
       dayNumber: "20",
       month: "Dec",
       year: "2026",
     },
-
-    // UI strings for text sections
-    headerDisplay: "Dec 20 Â· 2026",
-    rsvpDeadlineSummary: "20th", // e.g. "See you on the 15th!"
-    
-    // For ICS Generator specifically
+    headerDisplay: "Dec 20 · 2026",
+    rsvpDeadlineSummary: "20th",
     icsFormat: {
       dateStart: "20261220T053000Z",
       dateEnd:   "20261220T163000Z"
@@ -33,12 +26,12 @@ export const weddingData = {
   events: {
     ceremony: {
       titleEn: "Holy Matrimony",
-      titleMl: "à´µà´¿à´¶àµà´¦àµà´§ à´•àµàµ¼à´¬à´¾à´¨",
+      titleMl: "വിശുദ്ധ കൂർബാന",
       timeText: "11:00 AM to 12:30 PM"
     },
     reception: {
       titleEn: "Wedding Banquet",
-      titleMl: "à´¸àµà´¨àµ‡à´¹ à´µà´¿à´°àµà´¨àµà´¨àµ",
+      titleMl: "സ്നേഹ വിരുന്ന്",
       timeText: "1:00 PM onwards"
     }
   },
@@ -47,7 +40,7 @@ export const weddingData = {
     name: "St. Mary's Cathedral",
     addressEn: [
       "Basilica Road, Marine Drive",
-      "Kochi, Kerala â€” 682 031"
+      "Kochi, Kerala — 682 031"
     ],
     singleLineAddress: "St. Mary's Cathedral, Kochi, Kerala",
     links: {
@@ -61,7 +54,7 @@ export const weddingData = {
     timeText: "7:00 PM onwards",
     addressEn: [
       "Maradu, NH 66 Bypass",
-      "Kochi, Kerala â€” 682 304"
+      "Kochi, Kerala — 682 304"
     ],
     singleLineAddress: "Le Meridien Convention Hall, Kochi, Kerala",
     links: {
@@ -94,9 +87,9 @@ export const weddingData = {
     bibleVerse: "So they are no longer two, but one flesh. Therefore what God has joined together, let no one separate.",
     bibleReference: "Matthew 19:6",
     inviteSecondaryEn: "With the blessing of God and our families, we joyfully invite you to witness the union of our hearts.",
-    invitePrimaryMl: "à´µà´¿à´µà´¾à´¹ à´®à´‚à´—à´³à´¾à´¶à´‚à´¸à´•àµ¾",
+    invitePrimaryMl: "വിവാഹ മംഗളാശംസകൾ",
     envelopeSmallTitle: "GOD IS LOVE",
-    whatsappShareText: "You are affectionately invited to the Holy Matrimony of Gabriel & Evangeline! ðŸ“ St. Mary's Cathedral, Kochi ðŸ“… 20th Dec 2026"
+    whatsappShareText: "You are affectionately invited to the Holy Matrimony of Gabriel & Evangeline! St. Mary's Cathedral, Kochi — 20th Dec 2026"
   },
 
   gallery: [

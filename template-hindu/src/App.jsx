@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './features.css';
 import Envelope from './components/Envelope';
 import HeroCover from './components/HeroCover';

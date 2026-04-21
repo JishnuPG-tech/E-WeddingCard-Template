@@ -1,4 +1,4 @@
-﻿export const weddingData = {
+export const weddingData = {
   couple: {
     groom: "Anand",
     bride: "Meera",

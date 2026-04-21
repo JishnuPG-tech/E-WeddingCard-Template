@@ -1,4 +1,4 @@
-﻿import React, { useRef } from 'react';
+import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { MapPin } from 'lucide-react';
 import { weddingData } from '../config/weddingData';

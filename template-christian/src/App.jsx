@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import './features.css';
 import { motion as Motion } from 'framer-motion';
 import Envelope from './components/Envelope';

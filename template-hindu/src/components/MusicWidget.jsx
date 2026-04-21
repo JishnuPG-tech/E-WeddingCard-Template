@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+﻿import React, { useState, useRef, useEffect } from 'react';
 import { motion as Motion } from 'framer-motion';
 
 // Using a royalty-free Kerala instrumental from a CDN
@@ -7,8 +7,8 @@ const AUDIO_SRC = '/music.m4a';
 
 export default function MusicWidget() {
   const audioRef = useRef(null);
-  const [muted, setMuted] = useState(false);
-  const [started, setStarted] = useState(false);
+  const [muted, setMuted] = useState(() => localStorage.getItem('wc-music-muted') === 'true');
+  const [started, setStarted] = useState(() => localStorage.getItem('wc-music-muted') === 'true');
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -38,6 +38,8 @@ export default function MusicWidget() {
     const newMuted = !muted;
     audio.muted = newMuted;
     setMuted(newMuted);
+    localStorage.setItem('wc-music-muted', newMuted);
+    if (navigator.vibrate) navigator.vibrate(20);
   };
 
 

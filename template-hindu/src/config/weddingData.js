@@ -1,4 +1,4 @@
-export const weddingData = {
+﻿export const weddingData = {
   couple: {
     groom: "Anand",
     bride: "Meera",
@@ -9,6 +9,7 @@ export const weddingData = {
   dates: {
     // JavaScript parsable ISO format (used for countdown & ICS file)
     preciseDateIso: "2026-05-20T10:30:00+05:30",
+    rsvpDeadlineIso: "2026-05-10T23:59:59+05:30",
     
     // UI strings for the calendar view
     calendar: {
@@ -19,7 +20,7 @@ export const weddingData = {
     },
 
     // UI strings for text sections
-    headerDisplay: "May 20 · 2026",
+    headerDisplay: "May 20 Â· 2026",
     rsvpDeadlineSummary: "20th", // e.g. "See you on the 20th!"
     
     // For ICS Generator specifically
@@ -32,12 +33,12 @@ export const weddingData = {
   events: {
     ceremony: {
       titleEn: "Muhurtham Time",
-      titleMl: "മുഹൂർത്തം",
+      titleMl: "à´®àµà´¹àµ‚àµ¼à´¤àµà´¤à´‚",
       timeText: "10:30 AM to 11:15 AM"
     },
     reception: {
       titleEn: "Reception",
-      titleMl: "സൽക്കാരം",
+      titleMl: "à´¸àµ½à´•àµà´•à´¾à´°à´‚",
       timeText: "6:00 PM onwards"
     }
   },
@@ -46,7 +47,7 @@ export const weddingData = {
     name: "Kalyana Mandapam",
     addressEn: [
       "12/45 Temple Road, Thrissur",
-      "Kerala — 680 001"
+      "Kerala â€” 680 001"
     ],
     singleLineAddress: "Kalyana Mandapam, Thrissur, Kerala",
     links: {
@@ -60,7 +61,7 @@ export const weddingData = {
     timeText: "6:00 PM onwards",
     addressEn: [
       "Palace Road, Near Sakthan Bus Stand",
-      "Thrissur, Kerala — 680 001"
+      "Thrissur, Kerala â€” 680 001"
     ],
     singleLineAddress: "Royal Gardens Banquet Hall, Thrissur, Kerala",
     links: {
@@ -91,9 +92,9 @@ export const weddingData = {
 
   strings: {
     inviteSecondaryEn: "Together with their families, we joyfully invite you to celebrate the marriage of",
-    invitePrimaryMl: "വിവാഹ ക്ഷണം",
-    envelopeSmallTitle: "വിവാഹ ക്ഷണം",
-    whatsappShareText: "You're invited to the wedding of Anand & Meera! 📍 Kalyana Mandapam, Thrissur 📅 20th May 2026"
+    invitePrimaryMl: "à´µà´¿à´µà´¾à´¹ à´•àµà´·à´£à´‚",
+    envelopeSmallTitle: "à´µà´¿à´µà´¾à´¹ à´•àµà´·à´£à´‚",
+    whatsappShareText: "You're invited to the wedding of Anand & Meera! ðŸ“ Kalyana Mandapam, Thrissur ðŸ“… 20th May 2026"
   },
 
   gallery: [

@@ -1,4 +1,4 @@
-export const weddingData = {
+﻿export const weddingData = {
   couple: {
     groom: "Fahad",
     bride: "Ayesha",
@@ -9,6 +9,7 @@ export const weddingData = {
   dates: {
     // JavaScript parsable ISO format (used for countdown & ICS file)
     preciseDateIso: "2026-11-15T10:30:00+05:30",
+    rsvpDeadlineIso: "2026-05-10T23:59:59+05:30",
     
     // UI strings for the calendar view
     calendar: {
@@ -19,7 +20,7 @@ export const weddingData = {
     },
 
     // UI strings for text sections
-    headerDisplay: "Nov 15 · 2026",
+    headerDisplay: "Nov 15 Â· 2026",
     rsvpDeadlineSummary: "15th", // e.g. "See you on the 15th!"
     
     // For ICS Generator specifically
@@ -32,12 +33,12 @@ export const weddingData = {
   events: {
     ceremony: {
       titleEn: "Nikah Ceremony",
-      titleMl: "നിക്കாஹ்",
+      titleMl: "à´¨à´¿à´•àµà´•à®¾à®¹à¯",
       timeText: "10:30 AM to 11:30 AM"
     },
     reception: {
       titleEn: "Walima Reception",
-      titleMl: "വലീമ സൽക്കാരം",
+      titleMl: "à´µà´²àµ€à´® à´¸àµ½à´•àµà´•à´¾à´°à´‚",
       timeText: "6:00 PM onwards"
     }
   },
@@ -46,7 +47,7 @@ export const weddingData = {
     name: "Al-Hambra Convention Center",
     addressEn: [
       "124 Gateway Avenue, Kochi",
-      "Kerala — 682 011"
+      "Kerala â€” 682 011"
     ],
     singleLineAddress: "Al-Hambra Convention Center, Kochi, Kerala",
     links: {
@@ -56,11 +57,11 @@ export const weddingData = {
   },
 
   reception: {
-    name: "Walima — Grand Ballroom, Hotel Taj",
+    name: "Walima â€” Grand Ballroom, Hotel Taj",
     timeText: "7:30 PM onwards",
     addressEn: [
       "MG Road, Ernakulam",
-      "Kochi, Kerala — 682 035"
+      "Kochi, Kerala â€” 682 035"
     ],
     singleLineAddress: "Grand Ballroom, Hotel Taj, Kochi, Kerala",
     links: {
@@ -90,11 +91,11 @@ export const weddingData = {
   },
 
   strings: {
-    bismillahArabic: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+    bismillahArabic: "Ø¨ÙØ³Ù’Ù…Ù Ø§Ù„Ù„ÙŽÙ‘Ù‡Ù Ø§Ù„Ø±ÙŽÙ‘Ø­Ù’Ù…ÙŽÙ°Ù†Ù Ø§Ù„Ø±ÙŽÙ‘Ø­ÙÙŠÙ…Ù",
     inviteSecondaryEn: "In the name of Allah, the Most Gracious, the Most Merciful. We joyfully invite you to celebrate the marriage of",
-    invitePrimaryMl: "വിവാഹ ക്ഷണം",
+    invitePrimaryMl: "à´µà´¿à´µà´¾à´¹ à´•àµà´·à´£à´‚",
     envelopeSmallTitle: "BISMILLAH",
-    whatsappShareText: "You are affectionately invited to the Nikah of Fahad & Ayesha! 📍 Al-Hambra Convention Center, Kochi 📅 15th Nov 2026"
+    whatsappShareText: "You are affectionately invited to the Nikah of Fahad & Ayesha! ðŸ“ Al-Hambra Convention Center, Kochi ðŸ“… 15th Nov 2026"
   },
 
   gallery: [

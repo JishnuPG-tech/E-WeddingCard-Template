@@ -1,6 +1,0 @@
-{
-  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
-  "summary": "Refined implementation plan to fix the 'Gabriel & Evangeline' name overflow and visual misalignment in the Christian template by adjusting font sizing for long-name compatibility while strictly preserving the Hindu core's structural spacing.",
-  "updatedAt": "2026-04-16T05:40:05.019877300Z",
-  "requestFeedback": true
-}

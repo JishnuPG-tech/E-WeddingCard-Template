@@ -1,6 +1,0 @@
-{
-  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
-  "summary": "Detailed plan to run linting and build commands for all three templates, addressing code quality issues and ensuring the projects are ready for production deployment.",
-  "updatedAt": "2026-04-16T10:29:19.891878600Z",
-  "requestFeedback": true
-}

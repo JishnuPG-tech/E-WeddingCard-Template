@@ -1,6 +1,0 @@
-{
-  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
-  "summary": "Deployment plan to host all three wedding templates on Vercel using a single GitHub repository. This approach provides separate live URLs for each template while keeping the code centralized.",
-  "updatedAt": "2026-04-16T06:47:53.231325800Z",
-  "requestFeedback": true
-}
